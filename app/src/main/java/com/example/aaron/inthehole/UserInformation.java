@@ -1,0 +1,49 @@
+package com.example.aaron.inthehole;
+
+/**
+ * Created by Aaron on 04/03/2018.
+ */
+
+    public class UserInformation {
+
+        private String name;
+        private String age;
+        private String gender;
+    private String handicap;
+
+        public UserInformation(){
+
+        }
+
+        public String getAge() {
+            return age;
+        }
+
+        public void setAge(String age) {
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getGender() {
+            return gender;
+        }
+
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
+    public String getHandicap() {
+        return handicap;
+    }
+
+    public void setHandicap(String handicap) {
+        this.handicap = handicap;
+    }
+    }
+

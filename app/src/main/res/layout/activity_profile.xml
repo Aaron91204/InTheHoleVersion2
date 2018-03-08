@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.aaron.inthehole.MainActivity"
+    android:background="@drawable/background"
+   >
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Please enter your name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/handicap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Please enter your handicap"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Please enter your gender"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Please enter your age"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/savebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Details" />
+
+    <Button
+        android:id="@+id/viewdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Details" />
+
+    <Button
+        android:id="@+id/coursemanagement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Course Management" />
+
+    <Button
+        android:id="@+id/findus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find Us" />
+
+    <Button
+        android:id="@+id/scorecardbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ScoreCard" />
+
+    <Button
+        android:id="@+id/logbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
+
+</LinearLayout>

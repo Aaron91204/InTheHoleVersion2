@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aaron.inthehole.CourseManagement"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="27dp"
+        android:text="Course Management"
+        android:textSize="25sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="27dp" />
+
+    <Button
+        android:id="@+id/hole1btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:text="Hole 1 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole2btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole1btn"
+        android:layout_alignStart="@+id/hole1btn"
+        android:layout_below="@+id/hole1btn"
+        android:text="Hole 2 Hole and Green " />
+
+    <Button
+        android:id="@+id/hole3btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole2btn"
+        android:layout_alignStart="@+id/hole2btn"
+        android:layout_below="@+id/hole2btn"
+        android:text="Hole 3 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole4btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole3btn"
+        android:layout_alignStart="@+id/hole3btn"
+        android:layout_below="@+id/hole3btn"
+        android:text="Hole 4 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole5btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole4btn"
+        android:layout_alignStart="@+id/hole4btn"
+        android:layout_below="@+id/hole4btn"
+        android:text="Hole 5 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole6btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole5btn"
+        android:layout_alignStart="@+id/hole5btn"
+        android:layout_below="@+id/hole5btn"
+        android:text="Hole 6 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole7btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole6btn"
+        android:layout_alignStart="@+id/hole6btn"
+        android:layout_below="@+id/hole6btn"
+        android:text="Hole 7 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole9btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole8btn"
+        android:layout_alignStart="@+id/hole8btn"
+        android:layout_below="@+id/hole8btn"
+        android:layout_marginTop="8dp"
+        android:text="Hole 9 Hole and Green" />
+
+    <Button
+        android:id="@+id/hole8btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole7btn"
+        android:layout_alignStart="@+id/hole7btn"
+        android:layout_below="@+id/hole7btn"
+        android:text="Hole 8 Hole and Green" />
+
+    <Button
+        android:id="@+id/profilebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hole7btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/hole7btn"
+        android:layout_marginBottom="23dp"
+        android:text="Profile" />
+</RelativeLayout>
