@@ -3,6 +3,8 @@ package com.example.aaron.inthehole;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -61,25 +63,44 @@ Button btnadd,save;
         findViewById(profilebtn3).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         firstNum =(EditText)findViewById(R.id.hole1);
+        firstNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         secondNum =(EditText)findViewById(R.id.hole2);
+        secondNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         secondNum =(EditText)findViewById(R.id.hole2);
         thirdNum =(EditText)findViewById(R.id.hole3);
+        thirdNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole4=(EditText)findViewById(R.id.hole4);
+        hole4.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole5=(EditText)findViewById(R.id.hole5);
+        hole5.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole6=(EditText)findViewById(R.id.hole6);
+        hole6.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole7=(EditText)findViewById(R.id.hole7);
+        hole7.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole8=(EditText)findViewById(R.id.hole8);
+        hole8.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole9=(EditText)findViewById(R.id.hole9);
+        hole9.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole10=(EditText)findViewById(R.id.hole10);
+        hole10.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole11=(EditText)findViewById(R.id.hole11);
+        hole11.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole12=(EditText)findViewById(R.id.hole12);
+        hole12.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole13=(EditText)findViewById(R.id.hole13);
+        hole13.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole14=(EditText)findViewById(R.id.hole14);
+        hole14.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole15=(EditText)findViewById(R.id.hole15);
+        hole15.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole16=(EditText)findViewById(R.id.hole16);
+        hole16.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole17=(EditText)findViewById(R.id.hole17);
+        hole17.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole18=(EditText)findViewById(R.id.hole18);
+        hole18.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         handicap=(EditText)findViewById(R.id.edithandicap);
+        handicap.setFilters(new InputFilter[]{new InputFilterMinMax("1", "36")});
         net =(EditText)findViewById(R.id.netscore);
         result =(TextView) findViewById(R.id.textView3);
         result1 = (EditText)findViewById(R.id.editresult);
@@ -105,7 +126,7 @@ Button btnadd,save;
                 String net3 = net.getText().toString();
                 String name13 = name.getText().toString();
                 String user_id = mAuth.getCurrentUser().getUid();
-                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores Week 1").child(user_id);
+                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Net and Gross Scores Week 17th March 10§8 ").child(user_id);
                 Map newPost = new HashMap();
                 newPost.put("Gross Score",result);
                 newPost.put("handicap",handicap3);
@@ -126,6 +147,34 @@ Button btnadd,save;
                 break;
         }
 
+    }
+    public static class InputFilterMinMax implements InputFilter {
+
+        private int min, max;
+
+        public InputFilterMinMax(int min, int max) {
+            this.min = min;
+            this.max = max;
+        }
+
+        public InputFilterMinMax(String min, String max) {
+            this.min = Integer.parseInt(min);
+            this.max = Integer.parseInt(max);
+        }
+
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            try {
+                int input = Integer.parseInt(dest.toString() + source.toString());
+                if (isInRange(min, max, input))
+                    return null;
+            } catch (NumberFormatException nfe) { }
+            return "";
+        }
+
+        private boolean isInRange(int a, int b, int c) {
+            return b > a ? c >= a && c <= b : c >= b && c <= a;
+        }
     }
     public void onAdd(View view)
     {

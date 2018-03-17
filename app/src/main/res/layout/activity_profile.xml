@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter your name"
+        android:hint="Please enter your full name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -58,6 +58,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Course Management" />
+
+    <Button
+        android:id="@+id/discussionboardbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Discussion Board" />
 
     <Button
         android:id="@+id/findus"

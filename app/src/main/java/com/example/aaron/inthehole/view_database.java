@@ -102,9 +102,13 @@ public class view_database extends AppCompatActivity {
             Log.d(TAG, "showData: gender: " + uInfo.getGender());
 
             ArrayList<String> array  = new ArrayList<>();
+            array.add("Full Name:");
             array.add(uInfo.getName());
+            array.add("Age:");
             array.add(uInfo.getAge());
+            array.add("Handicap:");
             array.add(uInfo.getHandicap());
+            array.add("Gender:");
             array.add(uInfo.getGender());
             ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
             mListView.setAdapter(adapter);
