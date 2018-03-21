@@ -1,3 +1,4 @@
 <resources>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_view__scores">View_Scores</string>
 </resources>

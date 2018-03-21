@@ -284,7 +284,7 @@
         android:layout_alignStart="@+id/hole9"
         android:layout_below="@+id/hole9"
         android:onClick="onAdd"
-        android:text="Calculate"
+        android:text="Calculate Gross and Net"
         android:textSize="12sp" />
 
     <Button
@@ -327,7 +327,7 @@
         android:layout_alignLeft="@+id/addbtn"
         android:layout_alignStart="@+id/addbtn"
         android:onClick="calculate"
-        android:text="Calculate Net"
+        android:text="Store Score"
         android:textSize="12sp" />
 
     <EditText
@@ -373,10 +373,10 @@
         android:id="@+id/savedetails"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gethandicap"
+        android:layout_alignBottom="@+id/profilebtn3"
         android:layout_toEndOf="@+id/profilebtn3"
         android:layout_toRightOf="@+id/profilebtn3"
-        android:text="Save Score"
+        android:text="Enter Score"
         android:textSize="12sp" />
 
 </RelativeLayout>

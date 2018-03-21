@@ -1,9 +1,5 @@
 package com.example.aaron.inthehole;
 
-/**
- * Created by Aaron on 04/03/2018.
- */
-
     public class UserInformation {
 
         private String name;

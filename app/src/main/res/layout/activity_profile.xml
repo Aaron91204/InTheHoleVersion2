@@ -78,6 +78,12 @@
         android:text="ScoreCard" />
 
     <Button
+        android:id="@+id/previousscore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Previous Scores" />
+
+    <Button
         android:id="@+id/logbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

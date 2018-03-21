@@ -126,12 +126,12 @@ Button btnadd,save;
                 String net3 = net.getText().toString();
                 String name13 = name.getText().toString();
                 String user_id = mAuth.getCurrentUser().getUid();
-                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Net and Gross Scores Week 17th March 10§8 ").child(user_id);
+                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Net_and_Gross_Scores_Week_17th_March _2018 ").child(user_id);
                 Map newPost = new HashMap();
-                newPost.put("Gross Score",result);
+                newPost.put("Gross",result);
                 newPost.put("handicap",handicap3);
-                newPost.put("Net Score",net3);
-                newPost.put("Player Name",name13);
+                newPost.put("Net",net3);
+                newPost.put("Name",name13);
                 current_user_db.setValue(newPost);
                 Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();
             }
@@ -306,11 +306,6 @@ Button btnadd,save;
         num18 = Integer.parseInt(hole18.getText().toString());
         int sum =num1+num2+num3+num4+num5+num6+num7+num8+num9+num10+num11+num12+num13+num14+num15+num16+num17+num18;
         result1.setText(Integer.toString(sum));
-
-
-    }
-    public void calculate(View view)
-    {
         String result= result1.getText().toString().trim();
         String handicap1= handicap.getText().toString().trim();
         if (result.isEmpty()) {
@@ -333,6 +328,156 @@ Button btnadd,save;
 
 
     }
+    public void calculate(View view)
+    {
+        String first1= firstNum.getText().toString().trim();
+        String second1= secondNum.getText().toString().trim();
+        String third1= thirdNum.getText().toString().trim();
+        String fourth1= hole4.getText().toString().trim();
+        String fifth1= hole5.getText().toString().trim();
+        String sixth1= hole6.getText().toString().trim();
+        String seventh1= hole7.getText().toString().trim();
+        String eighth1= hole8.getText().toString().trim();
+        String ninth1= hole9.getText().toString().trim();
+        String tenth1= hole10.getText().toString().trim();
+        String eleventh1= hole11.getText().toString().trim();
+        String twelth1= hole12.getText().toString().trim();
+        String thirteen1= hole13.getText().toString().trim();
+        String fourteen1= hole14.getText().toString().trim();
+        String fifteen1= hole15.getText().toString().trim();
+        String sixteen1= hole16.getText().toString().trim();
+        String seventeen1= hole17.getText().toString().trim();
+        String eighteen1= hole18.getText().toString().trim();
+        if (first1.isEmpty()) {
+            firstNum.setError("Please enter score");
+            firstNum.requestFocus();
+            return;
+        }
+        if (second1.isEmpty()) {
+            secondNum.setError("Please enter score");
+            secondNum.requestFocus();
+            return;
+        }
+        if (third1.isEmpty()) {
+            thirdNum.setError("Please enter score");
+            thirdNum.requestFocus();
+            return;
+        }
+        if (fourth1.isEmpty()) {
+            hole4.setError("Please enter score");
+            hole4.requestFocus();
+            return;
+        }if (fifth1.isEmpty()) {
+        hole5.setError("Please enter score");
+        hole5.requestFocus();
+        return;
+    }
+        if (sixth1.isEmpty()) {
+            hole6.setError("Please enter score");
+            hole6.requestFocus();
+            return;
+        }
+        if (seventh1.isEmpty()) {
+            hole7.setError("Please enter score");
+            hole7.requestFocus();
+            return;
+        }if (eighth1.isEmpty()) {
+        hole8.setError("Please enter score");
+        hole8.requestFocus();
+        return;
+    }
+        if (ninth1.isEmpty()) {
+            hole9.setError("Please enter score");
+            hole9.requestFocus();
+            return;
+        }
+        if (tenth1.isEmpty()) {
+            hole10.setError("Please enter score");
+            hole10.requestFocus();
+            return;
+        }
+        if (eleventh1.isEmpty()) {
+            hole11.setError("Please enter score");
+            hole11.requestFocus();
+            return;
+        }
+        if (twelth1.isEmpty()) {
+            hole12.setError("Please enter score");
+            hole12.requestFocus();
+            return;
+        }
+        if (thirteen1.isEmpty()) {
+            hole13.setError("Please enter score");
+            hole13.requestFocus();
+            return;
+        }
+        if (fourteen1.isEmpty()) {
+            hole14.setError("Please enter score");
+            hole14.requestFocus();
+            return;
+        }
+        if (fifteen1.isEmpty()) {
+            hole15.setError("Please enter score");
+            hole15.requestFocus();
+            return;
+        }
+        if (sixteen1.isEmpty()) {
+            hole16.setError("Please enter score");
+            hole16.requestFocus();
+            return;
+        }
+        if (seventeen1.isEmpty()) {
+            hole17.setError("Please enter score");
+            hole17.requestFocus();
+            return;
+        }
+        if (eighteen1.isEmpty()) {
+            hole18.setError("Please enter score");
+            hole18.requestFocus();
+            return;
+        }
+        String first= firstNum.getText().toString();
+        String second= secondNum.getText().toString();
+        String third= thirdNum.getText().toString();
+        String fourth= hole4.getText().toString();
+        String fifth= hole5.getText().toString();
+        String sixth= hole6.getText().toString();
+        String seventh= hole7.getText().toString();
+        String eighth= hole8.getText().toString();
+        String ninth= hole9.getText().toString();
+        String tenth= hole10.getText().toString();
+        String eleventh= hole11.getText().toString();
+        String twelth= hole12.getText().toString();
+        String thirteen= hole13.getText().toString();
+        String fourteen= hole14.getText().toString();
+        String fifteen= hole15.getText().toString();
+        String sixteen= hole16.getText().toString();
+        String seventeen= hole17.getText().toString();
+        String eighteen= hole18.getText().toString();
+        String user_id = mAuth.getCurrentUser().getUid();
+        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Hole_Scores_17th_March_2018 ").child(user_id);
+        Map newPost1 = new HashMap();
+        newPost1.put("Hole1",first);
+        newPost1.put("Hole2",second);
+        newPost1.put("Hole3",third);
+        newPost1.put("Hole4",fourth);
+        newPost1.put("Hole5",fifth);
+        newPost1.put("Hole6",sixth);
+        newPost1.put("Hole7",seventh);
+        newPost1.put("Hole8",eighth);
+        newPost1.put("Hole9",ninth);
+        newPost1.put("Hole10",tenth);
+        newPost1.put("Hole11",eleventh);
+        newPost1.put("Hole12",twelth);
+        newPost1.put("Hole13",thirteen);
+        newPost1.put("Hole14",fourteen);
+        newPost1.put("Hole15",fifteen);
+        newPost1.put("Hole16",sixteen);
+        newPost1.put("Hole17",seventeen);
+        newPost1.put("Hole18",eighteen);
+        current_user_db.setValue(newPost1);
+        Toast.makeText(scoreboard1.this, "Score Stored", Toast.LENGTH_SHORT).show();
+    }
     public void clear(View v){
         firstNum.setText("");
         secondNum.setText("");
@@ -353,5 +498,9 @@ Button btnadd,save;
         hole17.setText("");
         hole18.setText("");
         result.setText("");
+        result1.setText("");
+        net.setText("");
+        handicap.setText("");
+        name.setText("");
     }
 }

@@ -73,7 +73,6 @@ public class discussionboard extends AppCompatActivity {
                         }
                     });
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
 
