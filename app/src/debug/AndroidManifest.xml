@@ -26,13 +26,8 @@
             android:name="com.example.aaron.inthehole.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name="com.example.aaron.inthehole.discussionboard" />
-        <activity android:name="com.example.aaron.inthehole.ScoreManagement" />
-        <activity
-            android:name="com.example.aaron.inthehole.View_Scores"
-            android:label="@string/title_activity_view__scores"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.aaron.inthehole.PreviousScores" />
-        <activity android:name="com.example.aaron.inthehole.PreviousScoreas" />
+        <activity android:name="com.example.aaron.inthehole.LeaderBoard"></activity>
     </application>
 
 </manifest>

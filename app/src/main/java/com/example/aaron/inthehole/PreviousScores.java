@@ -1,19 +1,14 @@
 package com.example.aaron.inthehole;
 
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.aaron.inthehole.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,13 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**
- * Created by User on 2/8/2017.
- */
-
-public class view_database extends AppCompatActivity {
+public class PreviousScores extends AppCompatActivity {
     private static final String TAG = "ViewDatabase";
-
     //add Firebase Database stuff
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
@@ -41,11 +31,10 @@ public class view_database extends AppCompatActivity {
     private ListView mListView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_database);
-
-        mListView = (ListView) findViewById(R.id.listview);
+        setContentView(com.example.aaron.inthehole.R.layout.activity_previous_scores);
+        mListView = (ListView) findViewById(R.id.mlistview);
 
         //declare the database reference object. This is what we use to access the database.
         //NOTE: Unless you are signed in, this will not be useable.
@@ -53,7 +42,7 @@ public class view_database extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("Users");
+        myRef = mFirebaseDatabase.getReference().child("Scores").child("Hole_Scores_17th_March_2018 ");
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -87,43 +76,32 @@ public class view_database extends AppCompatActivity {
         });
 
     }
-
-    /*private void showData(DataSnapshot dataSnapshot) {
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            UserInformation uInfo = new UserInformation();
-            uInfo.setName(ds.child(userID).getValue(UserInformation.class).getName()); //set the name
-            uInfo.setHandicap(ds.child(userID).getValue(UserInformation.class).getHandicap()); //set the name
-            uInfo.setAge(ds.child(userID).getValue(UserInformation.class).getAge()); //set the email
-            uInfo.setGender(ds.child(userID).getValue(UserInformation.class).getGender()); //set the phone_num
-
-            //display all the information
-            Log.d(TAG, "showData: name: " + uInfo.getName());
-            Log.d(TAG, "showData: age: " + uInfo.getAge());
-            Log.d(TAG, "showData: handicap: " + uInfo.getHandicap());
-            Log.d(TAG, "showData: gender: " + uInfo.getGender());
-
-            ArrayList<String> array  = new ArrayList<>();
-            array.add("Full Name:");
-            array.add(uInfo.getName());
-            array.add("Age:");
-            array.add(uInfo.getAge());
-            array.add("Handicap:");
-            array.add(uInfo.getHandicap());
-            array.add("Gender:");
-            array.add(uInfo.getGender());
-            ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-            mListView.setAdapter(adapter);
-        }
-    }
-    */
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
-            UserInformation uInfo = ds.getValue(UserInformation.class);
-            array.add(" Full Name : " +uInfo.getName());
-            array.add(" Age : " + uInfo.getAge());
-            array.add(" Handicap: " + uInfo.getHandicap());
-            array.add(" Gender: " + uInfo.getGender());
+            Scores uInfo = ds.getValue(Scores.class);
+            array.add("Week 1 Score");
+            array.add(" Hole 1 Par 5 : " +uInfo.getHole1());
+            array.add(" Hole 2 Par 3 : " + uInfo.getHole2());
+            array.add(" Hole 3 Par 4 : " + uInfo.getHole3());
+            array.add(" Hole 4 Par 4 : " + uInfo.getHole4());
+            array.add(" Hole 5 Par 4 : " + uInfo.getHole5());
+            array.add(" Hole 6 Par 5 : " + uInfo.getHole6());
+            array.add(" Hole 7 Par 4 : " + uInfo.getHole7());
+            array.add(" Hole 8 Par 4 : " + uInfo.getHole8());
+            array.add(" Hole 9 Par 3 : " + uInfo.getHole9());
+            array.add(" Hole 10 Par 5 : " + uInfo.getHole10());
+            array.add(" Hole 11 Par 3 : " + uInfo.getHole11());
+            array.add(" Hole 12 Par 4 : " + uInfo.getHole12());
+            array.add(" Hole 13 Par 4 : " + uInfo.getHole13());
+            array.add(" Hole 14 Par 4 : " + uInfo.getHole14());
+            array.add(" Hole 15 Par 5 : " + uInfo.getHole15());
+            array.add(" Hole 16 Par 4 : " + uInfo.getHole16());
+            array.add(" Hole 17 Par 4 : " + uInfo.getHole17());
+            array.add(" Hole 18 Par 5 : " + uInfo.getHole18());
+
+
+
 
 
         }
@@ -154,3 +132,4 @@ public class view_database extends AppCompatActivity {
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }
+

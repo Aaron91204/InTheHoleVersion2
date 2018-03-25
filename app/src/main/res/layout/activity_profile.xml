@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your full name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/handicap"
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your handicap"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/gender"
@@ -31,7 +33,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your gender"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/age"
@@ -39,7 +42,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your age"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/savebtn"
@@ -82,6 +86,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Previous Scores" />
+
+    <Button
+        android:id="@+id/leaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LeaderBoard" />
 
     <Button
         android:id="@+id/logbtn"

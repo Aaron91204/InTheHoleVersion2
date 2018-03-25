@@ -43,6 +43,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.savebtn).setOnClickListener(this);
         findViewById(R.id.logbtn).setOnClickListener(this);
         findViewById(R.id.previousscore).setOnClickListener(this);
+        findViewById(R.id.leaderboard).setOnClickListener(this);
         mSignOut = (Button) findViewById(R.id.logbtn);
         mAuth = FirebaseAuth.getInstance();
         setupFireBaseListener();
@@ -163,6 +164,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.discussionboardbtn:
                 startActivity(new Intent(ProfileActivity.this, discussionboard.class));
                 break;
+            case R.id.previousscore:
+                startActivity(new Intent(ProfileActivity.this, PreviousScores.class));
+                break;
+            case R.id.leaderboard:
+                startActivity(new Intent(ProfileActivity.this, LeaderBoard.class));
+                break;
+
 
 
 

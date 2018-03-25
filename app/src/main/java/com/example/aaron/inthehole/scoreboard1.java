@@ -126,12 +126,12 @@ Button btnadd,save;
                 String net3 = net.getText().toString();
                 String name13 = name.getText().toString();
                 String user_id = mAuth.getCurrentUser().getUid();
-                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Net_and_Gross_Scores_Week_17th_March _2018 ").child(user_id);
+                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ").child(user_id);
                 Map newPost = new HashMap();
                 newPost.put("Gross",result);
-                newPost.put("handicap",handicap3);
+                newPost.put("PlayerHandicap",handicap3);
                 newPost.put("Net",net3);
-                newPost.put("Name",name13);
+                newPost.put("FullName",name13);
                 current_user_db.setValue(newPost);
                 Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();
             }
