@@ -263,7 +263,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/addbtn"
         android:layout_marginBottom="32dp"
-        android:text="Profile"
+        android:text="Return To Profile"
         android:textSize="12sp" />
 
     <TextView
@@ -280,9 +280,9 @@
         android:id="@+id/addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/resetbtn"
         android:layout_alignLeft="@+id/hole9"
         android:layout_alignStart="@+id/hole9"
-        android:layout_below="@+id/hole9"
         android:onClick="onAdd"
         android:text="Calculate Gross and Net"
         android:textSize="12sp" />
@@ -295,7 +295,7 @@
         android:layout_alignLeft="@+id/profilebtn3"
         android:layout_alignStart="@+id/profilebtn3"
         android:onClick="clear"
-        android:text="Reset"
+        android:text="Reset All"
         android:textSize="12sp" />
 
     <TextView
@@ -310,7 +310,7 @@
         android:id="@+id/editresult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/addbtn"
+        android:layout_above="@+id/addbtn"
         android:layout_toLeftOf="@+id/textView3"
         android:layout_toStartOf="@+id/textView3"
         android:ems="10"
@@ -323,9 +323,9 @@
         android:id="@+id/gethandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/resetbtn"
-        android:layout_alignLeft="@+id/addbtn"
-        android:layout_alignStart="@+id/addbtn"
+        android:layout_above="@+id/addbtn"
+        android:layout_alignLeft="@+id/hole9"
+        android:layout_alignStart="@+id/hole9"
         android:onClick="calculate"
         android:text="Store Score"
         android:textSize="12sp" />
@@ -334,9 +334,9 @@
         android:id="@+id/edithandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/netscore"
         android:layout_alignLeft="@+id/editresult"
         android:layout_alignStart="@+id/editresult"
+        android:layout_below="@+id/editresult"
         android:ems="10"
         android:hint="Handicap"
         android:inputType="number"
@@ -373,9 +373,10 @@
         android:id="@+id/savedetails"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/profilebtn3"
-        android:layout_toEndOf="@+id/profilebtn3"
-        android:layout_toRightOf="@+id/profilebtn3"
+        android:layout_alignBaseline="@+id/netscore"
+        android:layout_alignBottom="@+id/netscore"
+        android:layout_toEndOf="@+id/resetbtn"
+        android:layout_toRightOf="@+id/resetbtn"
         android:text="Enter Score"
         android:textSize="12sp" />
 

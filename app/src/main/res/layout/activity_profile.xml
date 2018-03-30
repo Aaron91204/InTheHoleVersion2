@@ -48,55 +48,71 @@
     <Button
         android:id="@+id/savebtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save Details" />
+        android:layout_height="38dp"
+        android:text="Save Details"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/viewdetails"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Details" />
+        android:layout_height="38dp"
+        android:text="View Details"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/coursemanagement"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Course Management" />
+        android:layout_height="38dp"
+        android:text="Course Management"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/discussionboardbtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Discussion Board" />
+        android:layout_height="38dp"
+        android:text="Discussion Board"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/findus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find Us" />
+        android:layout_height="38dp"
+        android:text="Find Us"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/scorecardbtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ScoreCard" />
+        android:text="ScoreCard"
+        android:textSize="12sp"
+        android:layout_height="38dp"/>
 
     <Button
         android:id="@+id/previousscore"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Previous Scores" />
+        android:layout_height="38dp"
+        android:text="Previous Scores"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/leaderboard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LeaderBoard" />
+        android:layout_height="38dp"
+        android:text="LeaderBoard"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/bookingbtn"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Booking System"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/logbtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout" />
+        android:layout_height="38dp"
+        android:text="Logout"
+        android:textSize="12sp" />
 
 </LinearLayout>

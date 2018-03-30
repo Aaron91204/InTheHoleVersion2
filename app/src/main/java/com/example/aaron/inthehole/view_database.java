@@ -24,10 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**
- * Created by User on 2/8/2017.
- */
-
 public class view_database extends AppCompatActivity {
     private static final String TAG = "ViewDatabase";
 
@@ -35,8 +31,10 @@ public class view_database extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private DatabaseReference myRef;
     private  String userID;
+    private FirebaseUser mCurrentUser;
+    private DatabaseReference myRef;
+
 
     private ListView mListView;
 
@@ -49,11 +47,9 @@ public class view_database extends AppCompatActivity {
 
         //declare the database reference object. This is what we use to access the database.
         //NOTE: Unless you are signed in, this will not be useable.
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = user.getUid();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("Users");
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        String userid=user.getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -72,7 +68,7 @@ public class view_database extends AppCompatActivity {
             }
         };
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -85,6 +81,7 @@ public class view_database extends AppCompatActivity {
 
             }
         });
+
 
     }
 
@@ -118,31 +115,13 @@ public class view_database extends AppCompatActivity {
     */
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            UserInformation uInfo = ds.getValue(UserInformation.class);
-            array.add(" Full Name : " +uInfo.getName());
-            array.add(" Age : " + uInfo.getAge());
-            array.add(" Handicap: " + uInfo.getHandicap());
-            array.add(" Gender: " + uInfo.getGender());
-
-
-        }
+        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);
+        array.add(" Full Name : " +uInfo.getName());
+        array.add(" Age : " + uInfo.getAge());
+        array.add(" Handicap: " + uInfo.getHandicap());
+        array.add(" Gender: " + uInfo.getGender());
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
         mListView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
     }
 
 

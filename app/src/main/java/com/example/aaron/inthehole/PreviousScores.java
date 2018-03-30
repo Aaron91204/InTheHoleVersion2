@@ -38,11 +38,9 @@ public class PreviousScores extends AppCompatActivity {
 
         //declare the database reference object. This is what we use to access the database.
         //NOTE: Unless you are signed in, this will not be useable.
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = user.getUid();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("Scores").child("Hole_Scores_17th_March_2018 ");
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        String userid=user.getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 ");
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -61,16 +59,16 @@ public class PreviousScores extends AppCompatActivity {
             }
         };
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 showData(dataSnapshot);
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(PreviousScores.this, "No Scores Found", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -78,8 +76,7 @@ public class PreviousScores extends AppCompatActivity {
     }
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            Scores uInfo = ds.getValue(Scores.class);
+            Scores uInfo = dataSnapshot.getValue(Scores.class);
             array.add("Week 1 Score");
             array.add(" Hole 1 Par 5 : " +uInfo.getHole1());
             array.add(" Hole 2 Par 3 : " + uInfo.getHole2());
@@ -100,27 +97,8 @@ public class PreviousScores extends AppCompatActivity {
             array.add(" Hole 17 Par 4 : " + uInfo.getHole17());
             array.add(" Hole 18 Par 5 : " + uInfo.getHole18());
 
-
-
-
-
-        }
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
         mListView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
     }
 
 

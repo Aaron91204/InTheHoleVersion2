@@ -85,7 +85,8 @@ public class LeaderBoard extends AppCompatActivity {
         ArrayList<String> array  = new ArrayList<>();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             LeaderBoardScores uInfo = ds.getValue(LeaderBoardScores.class);
-            array.add(" Rank:"  +" Net:" +uInfo.getNet() +  "  Name:" +uInfo.getFullName() + "   Gross:" + uInfo.getGross()+ "   Handicap:" + uInfo.getPlayerHandicap());
+            array.add("Net: " +uInfo.getNet() );
+            array.add("Name: " +uInfo.getFullName() + "   Gross:  " + uInfo.getGross()+ "   Handicap:  " + uInfo.getPlayerHandicap());
 
 
         }

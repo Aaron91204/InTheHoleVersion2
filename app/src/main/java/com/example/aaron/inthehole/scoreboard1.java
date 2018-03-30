@@ -133,7 +133,7 @@ Button btnadd,save;
                 newPost.put("Net",net3);
                 newPost.put("FullName",name13);
                 current_user_db.setValue(newPost);
-                Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(scoreboard1.this, "Score Entered Into Competition", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -476,7 +476,7 @@ Button btnadd,save;
         newPost1.put("Hole17",seventeen);
         newPost1.put("Hole18",eighteen);
         current_user_db.setValue(newPost1);
-        Toast.makeText(scoreboard1.this, "Score Stored", Toast.LENGTH_SHORT).show();
+        Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();
     }
     public void clear(View v){
         firstNum.setText("");

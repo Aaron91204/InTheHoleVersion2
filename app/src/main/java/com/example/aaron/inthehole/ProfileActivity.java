@@ -44,6 +44,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.logbtn).setOnClickListener(this);
         findViewById(R.id.previousscore).setOnClickListener(this);
         findViewById(R.id.leaderboard).setOnClickListener(this);
+        findViewById(R.id.bookingbtn).setOnClickListener(this);
         mSignOut = (Button) findViewById(R.id.logbtn);
         mAuth = FirebaseAuth.getInstance();
         setupFireBaseListener();
@@ -64,6 +65,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        String userid=user.getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
 
         viewdetails = (Button) findViewById(R.id.viewdetails);
         save.setOnClickListener(new View.OnClickListener() {
@@ -170,6 +174,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.leaderboard:
                 startActivity(new Intent(ProfileActivity.this, LeaderBoard.class));
                 break;
+            case R.id.bookingbtn:
+                startActivity(new Intent(ProfileActivity.this, Booking.class));
+                break;
+
 
 
 
@@ -201,6 +209,7 @@ private void setupFireBaseListener()
     protected void onStart() {
         super.onStart();
         FirebaseAuth.getInstance().addAuthStateListener(mAuthStateListener);
+
     }
 
     @Override

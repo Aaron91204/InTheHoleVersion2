@@ -27,7 +27,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name="com.example.aaron.inthehole.discussionboard" />
         <activity android:name="com.example.aaron.inthehole.PreviousScores" />
-        <activity android:name="com.example.aaron.inthehole.LeaderBoard"></activity>
+        <activity android:name="com.example.aaron.inthehole.LeaderBoard" />
+        <activity android:name="com.example.aaron.inthehole.Booking"></activity>
     </application>
 
 </manifest>
