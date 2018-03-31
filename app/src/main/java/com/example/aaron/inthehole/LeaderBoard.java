@@ -35,7 +35,6 @@ public class LeaderBoard extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Query myRef;
     private  String userID;
-
     private ListView mListView;
 
     @Override
@@ -94,19 +93,6 @@ public class LeaderBoard extends AppCompatActivity {
         mListView.setAdapter(adapter);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
 
 
     /**

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aaron.inthehole.HandicapAdjustment">
+
+    <EditText
+        android:id="@+id/retreivehandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Enter Your Handicap"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/retrievenet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/retreivehandicap"
+        android:ems="10"
+        android:hint="Enter Your Net Score"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/calculatehandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/retreivehandicap"
+        android:layout_marginTop="48dp"
+        android:onClick="onClick"
+        android:text="Calculate Handicap" />
+
+    <EditText
+        android:id="@+id/adjust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/calculatehandicap"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:hint="Adjusted Handicap"
+        android:inputType="number"/>
+
+    <ListView
+        android:id="@+id/nListView"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/adjust"
+        android:layout_marginTop="44dp"></ListView>
+
+</RelativeLayout>

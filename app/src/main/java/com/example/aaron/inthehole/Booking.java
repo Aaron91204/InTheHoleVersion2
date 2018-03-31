@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Booking extends AppCompatActivity implements View.OnClickListener {
-    public Button book9am;
+    public Button book9am, book915am;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,8 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.profilebtn).setOnClickListener(this);
         findViewById(R.id.booking9am).setOnClickListener(this);
         book9am = (Button)findViewById(R.id.booking9am);
+        findViewById(R.id.booking915am).setOnClickListener(this);
+        book915am = (Button)findViewById(R.id.booking915am);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,9 +64,9 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.booking9am:
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this);
-                View mView = getLayoutInflater().inflate(R.layout.dialog_booking,null);
+                View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null);
                 final EditText mPlayer1 = (EditText) mView.findViewById(R.id.player1);
-                final EditText mPlayer2= (EditText) mView.findViewById(R.id.player2);
+                final EditText mPlayer2 = (EditText) mView.findViewById(R.id.player2);
                 final EditText mPlayer3 = (EditText) mView.findViewById(R.id.player3);
                 final EditText mPlayer4 = (EditText) mView.findViewById(R.id.player4);
                 final EditText mTime = (EditText) mView.findViewById(R.id.timeedit);
@@ -72,10 +74,10 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 mBookingbtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String player1= mPlayer1.getText().toString().trim();
-                        String player2= mPlayer2.getText().toString().trim();
-                        String player4= mPlayer4.getText().toString().trim();
-                        String player3= mPlayer3.getText().toString().trim();
+                        String player1 = mPlayer1.getText().toString().trim();
+                        String player2 = mPlayer2.getText().toString().trim();
+                        String player4 = mPlayer4.getText().toString().trim();
+                        String player3 = mPlayer3.getText().toString().trim();
                         if (player1.isEmpty()) {
                             mPlayer1.setError("Please enter player 1");
                             mPlayer1.requestFocus();
@@ -90,7 +92,8 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                             mPlayer3.setError("Please enter player 2");
                             mPlayer3.requestFocus();
                             return;
-                        }if (player2.isEmpty()) {
+                        }
+                        if (player2.isEmpty()) {
                             mPlayer4.setError("Please enter player 2");
                             mPlayer4.requestFocus();
                             return;
@@ -99,14 +102,14 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         String playertwo = mPlayer2.getText().toString();
                         String playerthree = mPlayer3.getText().toString();
                         String playerfour = mPlayer4.getText().toString();
-                        String teetime= mTime.getText().toString().trim();
+                        String teetime = mTime.getText().toString().trim();
                         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am");
                         Map newPost = new HashMap();
-                        newPost.put("playerone",playerone);
-                        newPost.put("playertwo",playertwo);
-                        newPost.put("playerthree",playerthree);
-                        newPost.put("playerfour",playerfour);
-                        newPost.put("teetime",teetime);
+                        newPost.put("playerone", playerone);
+                        newPost.put("playertwo", playertwo);
+                        newPost.put("playerthree", playerthree);
+                        newPost.put("playerfour", playerfour);
+                        newPost.put("teetime", teetime);
                         current_user_db.setValue(newPost);
                         Toast.makeText(Booking.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
                         book9am.setClickable(false);
@@ -126,9 +129,13 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
+                break;
+                
 
 
         }
+
+
 
     }
 

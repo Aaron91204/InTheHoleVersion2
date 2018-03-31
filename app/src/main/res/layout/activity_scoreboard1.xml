@@ -299,7 +299,7 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/handicap"
+        android:id="@+id/handicapbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/resetbtn"
@@ -349,7 +349,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/hole18"
         android:layout_alignRight="@+id/hole18"
-        android:layout_below="@+id/handicap"
+        android:layout_below="@+id/handicapbutton"
         android:ems="10"
         android:hint="Net Score"
         android:inputType="textPersonName"
@@ -367,7 +367,8 @@
         android:hint="Your Name"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
 
     <Button
         android:id="@+id/savedetails"

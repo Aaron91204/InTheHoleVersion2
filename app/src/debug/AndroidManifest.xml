@@ -28,7 +28,8 @@
         <activity android:name="com.example.aaron.inthehole.discussionboard" />
         <activity android:name="com.example.aaron.inthehole.PreviousScores" />
         <activity android:name="com.example.aaron.inthehole.LeaderBoard" />
-        <activity android:name="com.example.aaron.inthehole.Booking"></activity>
+        <activity android:name="com.example.aaron.inthehole.Booking" />
+        <activity android:name="com.example.aaron.inthehole.HandicapAdjustment"></activity>
     </application>
 
 </manifest>

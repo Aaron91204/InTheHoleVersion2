@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -45,6 +44,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.previousscore).setOnClickListener(this);
         findViewById(R.id.leaderboard).setOnClickListener(this);
         findViewById(R.id.bookingbtn).setOnClickListener(this);
+        findViewById(R.id.handicapbutton).setOnClickListener(this);
+
         mSignOut = (Button) findViewById(R.id.logbtn);
         mAuth = FirebaseAuth.getInstance();
         setupFireBaseListener();
@@ -68,6 +69,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         String userid=user.getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
 
         viewdetails = (Button) findViewById(R.id.viewdetails);
         save.setOnClickListener(new View.OnClickListener() {
@@ -177,12 +179,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.bookingbtn:
                 startActivity(new Intent(ProfileActivity.this, Booking.class));
                 break;
-
-
-
-
-
-
+            case R.id.handicapbutton:
+                startActivity(new Intent(ProfileActivity.this, HandicapAdjustment.class));
+                break;
         }
     }
 private void setupFireBaseListener()
