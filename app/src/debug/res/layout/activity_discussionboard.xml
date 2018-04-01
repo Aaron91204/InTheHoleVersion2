@@ -19,10 +19,12 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:id="@+id/linearLayout">
+
         <EditText
+            android:id="@+id/editMessageE"
             android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:id="@+id/editMessageE"/>
+            android:hint="Enter a message" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
