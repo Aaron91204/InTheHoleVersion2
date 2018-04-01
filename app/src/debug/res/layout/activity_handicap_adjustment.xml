@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aaron.inthehole.HandicapAdjustment">
+    tools:context="com.example.aaron.inthehole.HandicapAdjustment"
+    android:background="@drawable/background">
 
     <EditText
         android:id="@+id/retreivehandicap"
@@ -12,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Enter Your Handicap"
         android:inputType="number" />
@@ -24,6 +26,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/retreivehandicap"
+        android:layout_marginTop="27dp"
         android:ems="10"
         android:hint="Enter Your Net Score"
         android:inputType="number" />
@@ -34,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/retreivehandicap"
-        android:layout_marginTop="48dp"
+        android:layout_below="@+id/retrievenet"
+        android:layout_marginTop="25dp"
         android:onClick="onClick"
         android:text="Calculate Handicap" />
 
@@ -45,11 +48,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/calculatehandicap"
-        android:layout_marginTop="46dp"
+        android:layout_below="@+id/calculatehandicap"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="Adjusted Handicap"
-        android:inputType="number"/>
+        android:inputType="number" />
 
     <ListView
         android:id="@+id/nListView"
@@ -57,7 +60,17 @@
         android:layout_height="150sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/adjust"
-        android:layout_marginTop="44dp"></ListView>
+        android:layout_below="@+id/adjust"
+        android:layout_marginTop="34dp"></ListView>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Handicap Adjustment"
+        android:textSize="20sp" />
 
 </RelativeLayout>

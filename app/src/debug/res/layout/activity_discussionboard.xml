@@ -9,7 +9,8 @@
     <android.support.v7.widget.RecyclerView android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_above="@+id/linearLayout"
-        android:id="@+id/messageRec">
+        android:id="@+id/messageRec"
+        android:background="@drawable/background">
 
     </android.support.v7.widget.RecyclerView>
     <LinearLayout
