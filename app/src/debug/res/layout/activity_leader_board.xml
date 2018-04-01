@@ -13,7 +13,8 @@
         android:text="Leaderboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUserInfo"/>
+        android:id="@+id/tvUserInfo"
+        android:textColor="#000000"/>
 
     <ListView
         android:layout_width="match_parent"

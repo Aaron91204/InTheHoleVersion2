@@ -17,7 +17,8 @@
         android:hint="Please enter your full name"
         android:inputType="textPersonName"
         android:textSize="16sp"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/handicap"
@@ -26,7 +27,8 @@
         android:ems="10"
         android:hint="Please enter your handicap"
         android:inputType="number"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/gender"
@@ -36,7 +38,8 @@
         android:hint="Please enter your gender"
         android:inputType="textPersonName"
         android:textSize="16sp"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/age"
@@ -45,7 +48,8 @@
         android:ems="10"
         android:hint="Please enter your age"
         android:inputType="number"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColorHint="#000000"/>
 
     <Button
         android:id="@+id/savebtn"

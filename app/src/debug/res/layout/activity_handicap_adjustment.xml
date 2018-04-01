@@ -11,48 +11,48 @@
         android:id="@+id/retreivehandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
         android:ems="10"
         android:hint="Enter Your Handicap"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="#000000" />
 
     <EditText
         android:id="@+id/retrievenet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@+id/retreivehandicap"
+        android:layout_alignStart="@+id/retreivehandicap"
         android:layout_below="@+id/retreivehandicap"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="11dp"
         android:ems="10"
         android:hint="Enter Your Net Score"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="#000000" />
 
     <Button
         android:id="@+id/calculatehandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/retrievenet"
-        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
         android:onClick="onClick"
-        android:text="Calculate Handicap" />
+        android:text="Calculate Handicap"
+        android:textColorHint="#000000" />
 
     <EditText
         android:id="@+id/adjust"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@+id/retrievenet"
+        android:layout_alignStart="@+id/retrievenet"
         android:layout_below="@+id/calculatehandicap"
-        android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="Adjusted Handicap"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="#000000" />
 
     <ListView
         android:id="@+id/nListView"
@@ -71,6 +71,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="Handicap Adjustment"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 
 </RelativeLayout>
