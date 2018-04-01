@@ -115,6 +115,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                 Par = Net*0.4;
                 sum = num1 -Par;
                 adjust.setText(Double.toString(sum));
+                    Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
                 }
                 else if(num2<72 && num1>=5 && num1<18 )
                 {
@@ -125,6 +126,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     Par = Net*0.2;
                     sum = num1 -Par;
                     adjust.setText(Double.toString(sum));
+                    Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
                 }
                 else if(num2<72 && num1>=0 && num1<5 )
                 {
@@ -135,12 +137,14 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     Par = Net*0.1;
                     sum = num1 -Par;
                     adjust.setText(Double.toString(sum));
+                    Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
                 }
                 else if(num2>72 && num2<=76 )
                 {
                     double sum;
                     sum = num1 +0;
                     adjust.setText(Double.toString(sum));
+                    Toast.makeText(this, "No Change", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
