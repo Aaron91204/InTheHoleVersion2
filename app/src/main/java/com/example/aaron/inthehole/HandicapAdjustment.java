@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class HandicapAdjustment extends AppCompatActivity implements View.OnClickListener {
     private ListView mListView;
-    EditText Handicap, Net,adjust;
+    EditText Handicap, Net,adjust, retrievehandicap , retrievenet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,9 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_handicap_adjustment);
         findViewById(R.id.calculatehandicap).setOnClickListener(this);
         adjust = (EditText) findViewById(R.id.adjust);
-
-
         mListView = (ListView) findViewById(R.id.nListView);
+        retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
+        retrievenet = (EditText) findViewById(R.id.retrievenet);
 
         //declare the database reference object. This is what we use to access the database.
         //NOTE: Unless you are signed in, this will not be useable.
@@ -68,6 +68,8 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         array.add(" Full Name: " + uInfo.getFullName());
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
         mListView.setAdapter(adapter);
+        retrievehandicap.setText(uInfo.getPlayerHandicap());
+        retrievenet.setText(uInfo.getNet());
     }
 
 

@@ -84,35 +84,6 @@ public class view_database extends AppCompatActivity {
 
 
     }
-
-    /*private void showData(DataSnapshot dataSnapshot) {
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            UserInformation uInfo = new UserInformation();
-            uInfo.setName(ds.child(userID).getValue(UserInformation.class).getName()); //set the name
-            uInfo.setHandicap(ds.child(userID).getValue(UserInformation.class).getHandicap()); //set the name
-            uInfo.setAge(ds.child(userID).getValue(UserInformation.class).getAge()); //set the email
-            uInfo.setGender(ds.child(userID).getValue(UserInformation.class).getGender()); //set the phone_num
-
-            //display all the information
-            Log.d(TAG, "showData: name: " + uInfo.getName());
-            Log.d(TAG, "showData: age: " + uInfo.getAge());
-            Log.d(TAG, "showData: handicap: " + uInfo.getHandicap());
-            Log.d(TAG, "showData: gender: " + uInfo.getGender());
-
-            ArrayList<String> array  = new ArrayList<>();
-            array.add("Full Name:");
-            array.add(uInfo.getName());
-            array.add("Age:");
-            array.add(uInfo.getAge());
-            array.add("Handicap:");
-            array.add(uInfo.getHandicap());
-            array.add("Gender:");
-            array.add(uInfo.getGender());
-            ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-            mListView.setAdapter(adapter);
-        }
-    }
-    */
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
         UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);

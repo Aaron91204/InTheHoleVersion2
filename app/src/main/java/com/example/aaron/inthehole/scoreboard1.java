@@ -106,12 +106,9 @@ Button btnadd,save;
         result1 = (EditText)findViewById(R.id.editresult);
         btnadd =(Button)findViewById(R.id.addbtn);
         name=(EditText)findViewById(R.id.editname);
+        name.setKeyListener(null);
+        handicap.setKeyListener(null);
         save = (Button) findViewById(R.id.savedetails);
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = user.getUid();
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,6 +133,31 @@ Button btnadd,save;
                 Toast.makeText(scoreboard1.this, "Score Entered Into Competition", Toast.LENGTH_SHORT).show();
             }
         });
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        String userid=user.getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
+        ref.child(userid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                showData(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+    private void showData(DataSnapshot dataSnapshot) {
+        ArrayList<String> array  = new ArrayList<>();
+        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);
+        name.setText(uInfo.getName());
+        handicap.setText(uInfo.getHandicap());
     }
 
     @Override
