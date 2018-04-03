@@ -47,13 +47,19 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                showData(dataSnapshot);
+                if (dataSnapshot.exists()) {
+                    showData(dataSnapshot);
+                } else {
+                   finish();
+                    Toast.makeText(HandicapAdjustment.this, "You need to submit a score", Toast.LENGTH_SHORT).show();
+
+
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
 
             }
         });

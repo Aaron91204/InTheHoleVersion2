@@ -86,12 +86,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         View mView = getLayoutInflater().inflate(R.layout.welcomemessage, null);
                         final EditText mPlayer1 = (EditText) mView.findViewById(R.id.namepopup);
                         final EditText mPlayer2 = (EditText) mView.findViewById(R.id.handicappopup);
+                        mPlayer2.setFilters(new InputFilter[]{new scoreboard1.InputFilterMinMax("1", "36")});
                         final EditText mPlayer3 = (EditText) mView.findViewById(R.id.agepopup);
+                        mPlayer3.setFilters(new InputFilter[]{new scoreboard1.InputFilterMinMax("1", "100")});
                         final EditText mPlayer4 = (EditText) mView.findViewById(R.id.genderpopup);
-                        final Button mBookingbtn = (Button) mView.findViewById(R.id.savepopup);
-                        mBookingbtn.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
+                        mBuilder.setNeutralButton("Save Details ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                            public void onClick(DialogInterface dialog, int which) {
                                 String player1 = mPlayer1.getText().toString().trim();
                                 String player2 = mPlayer2.getText().toString().trim();
                                 String player4 = mPlayer4.getText().toString().trim();
@@ -128,12 +128,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                 newPost.put("gender", playerfour);
                                 current_user_db.setValue(newPost);
                                 Toast.makeText(ProfileActivity.this, "Details Saved", Toast.LENGTH_SHORT).show();
-
-                            }
-
-                        });
-                        mBuilder.setNeutralButton("Close ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
-                            public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
                         });

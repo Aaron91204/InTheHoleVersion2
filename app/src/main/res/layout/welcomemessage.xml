@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
 
     <EditText
         android:id="@+id/handicappopup"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your handicap"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/agepopup"
@@ -34,7 +35,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your age"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/genderpopup"
@@ -42,12 +43,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your gender"
-        android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/savepopup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save Details" />
+        android:inputType="textPersonName"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
 
 </LinearLayout>
