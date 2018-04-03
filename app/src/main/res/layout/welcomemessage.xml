@@ -2,59 +2,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Titlepopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Booking"
+        android:text="Enter User Details"
         android:textAlignment="center"
         android:textSize="25sp" />
 
     <EditText
-        android:id="@+id/player1"
+        android:id="@+id/namepopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter player one"
+        android:hint="Please enter your name"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/player2"
+        android:id="@+id/handicappopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter player two"
+        android:hint="Please enter your handicap"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/player3"
+        android:id="@+id/agepopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter player three"
+        android:hint="Please enter your age"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/player4"
+        android:id="@+id/genderpopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter player four"
+        android:hint="Please enter your gender"
         android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/timeedit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="9:15am" />
 
     <Button
-        android:id="@+id/bookingbtn"
+        android:id="@+id/savepopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book Tee Time" />
+        android:text="Save Details" />
 
 </LinearLayout>

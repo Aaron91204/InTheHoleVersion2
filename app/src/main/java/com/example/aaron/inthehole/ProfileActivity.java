@@ -1,7 +1,10 @@
 package com.example.aaron.inthehole;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -14,8 +17,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,7 +51,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.leaderboard).setOnClickListener(this);
         findViewById(R.id.bookingbtn).setOnClickListener(this);
         findViewById(R.id.handicapbutton).setOnClickListener(this);
-
         mSignOut = (Button) findViewById(R.id.logbtn);
         mAuth = FirebaseAuth.getInstance();
         setupFireBaseListener();
@@ -67,8 +72,87 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-        String userid=user.getUid();
+        final String userid=user.getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists())
+                {
+                }
+                else
+                    {
+                        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfileActivity.this);
+                        View mView = getLayoutInflater().inflate(R.layout.welcomemessage, null);
+                        final EditText mPlayer1 = (EditText) mView.findViewById(R.id.namepopup);
+                        final EditText mPlayer2 = (EditText) mView.findViewById(R.id.handicappopup);
+                        final EditText mPlayer3 = (EditText) mView.findViewById(R.id.agepopup);
+                        final EditText mPlayer4 = (EditText) mView.findViewById(R.id.genderpopup);
+                        final Button mBookingbtn = (Button) mView.findViewById(R.id.savepopup);
+                        mBookingbtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String player1 = mPlayer1.getText().toString().trim();
+                                String player2 = mPlayer2.getText().toString().trim();
+                                String player4 = mPlayer4.getText().toString().trim();
+                                String player3 = mPlayer3.getText().toString().trim();
+                                if (player1.isEmpty()) {
+                                    mPlayer1.setError("Please enter player 1");
+                                    mPlayer1.requestFocus();
+                                    return;
+                                }
+                                if (player2.isEmpty()) {
+                                    mPlayer2.setError("Please enter player 2");
+                                    mPlayer2.requestFocus();
+                                    return;
+                                }
+                                if (player3.isEmpty()) {
+                                    mPlayer3.setError("Please enter player 2");
+                                    mPlayer3.requestFocus();
+                                    return;
+                                }
+                                if (player4.isEmpty()) {
+                                    mPlayer4.setError("Please enter player 2");
+                                    mPlayer4.requestFocus();
+                                    return;
+                                }
+                                String playerone = mPlayer1.getText().toString();
+                                String playertwo = mPlayer2.getText().toString();
+                                String playerthree = mPlayer3.getText().toString();
+                                String playerfour = mPlayer4.getText().toString();
+                                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+                                Map newPost = new HashMap();
+                                newPost.put("name", playerone);
+                                newPost.put("handicap", playertwo);
+                                newPost.put("age", playerthree);
+                                newPost.put("gender", playerfour);
+                                current_user_db.setValue(newPost);
+                                Toast.makeText(ProfileActivity.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
+
+
+
+                            }
+
+
+                        });
+                        mBuilder.setNeutralButton("Close ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        mBuilder.setView(mView);
+                        AlertDialog dialog = mBuilder.create();
+                        dialog.show();
+                    }
+
+                    }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
         viewdetails = (Button) findViewById(R.id.viewdetails);
