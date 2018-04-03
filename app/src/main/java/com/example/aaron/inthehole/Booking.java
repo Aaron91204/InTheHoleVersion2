@@ -89,12 +89,12 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                             return;
                         }
                         if (player3.isEmpty()) {
-                            mPlayer3.setError("Please enter player 2");
+                            mPlayer3.setError("Please enter player 3");
                             mPlayer3.requestFocus();
                             return;
                         }
-                        if (player2.isEmpty()) {
-                            mPlayer4.setError("Please enter player 2");
+                        if (player4.isEmpty()) {
+                            mPlayer4.setError("Please enter player 4");
                             mPlayer4.requestFocus();
                             return;
                         }
@@ -121,7 +121,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
 
 
                 });
-                mBuilder.setNeutralButton("Close ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                mBuilder.setNeutralButton("Finish Setup ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }

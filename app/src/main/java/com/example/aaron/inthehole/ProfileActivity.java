@@ -97,22 +97,22 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                 String player4 = mPlayer4.getText().toString().trim();
                                 String player3 = mPlayer3.getText().toString().trim();
                                 if (player1.isEmpty()) {
-                                    mPlayer1.setError("Please enter player 1");
+                                    mPlayer1.setError("Please enter your name");
                                     mPlayer1.requestFocus();
                                     return;
                                 }
                                 if (player2.isEmpty()) {
-                                    mPlayer2.setError("Please enter player 2");
+                                    mPlayer2.setError("Please enter your handicap");
                                     mPlayer2.requestFocus();
                                     return;
                                 }
                                 if (player3.isEmpty()) {
-                                    mPlayer3.setError("Please enter player 2");
+                                    mPlayer3.setError("Please enter your age");
                                     mPlayer3.requestFocus();
                                     return;
                                 }
                                 if (player4.isEmpty()) {
-                                    mPlayer4.setError("Please enter player 2");
+                                    mPlayer4.setError("Please enter your gender");
                                     mPlayer4.requestFocus();
                                     return;
                                 }
@@ -127,12 +127,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                 newPost.put("age", playerthree);
                                 newPost.put("gender", playerfour);
                                 current_user_db.setValue(newPost);
-                                Toast.makeText(ProfileActivity.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
-
-
+                                Toast.makeText(ProfileActivity.this, "Details Saved", Toast.LENGTH_SHORT).show();
 
                             }
-
 
                         });
                         mBuilder.setNeutralButton("Close ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
