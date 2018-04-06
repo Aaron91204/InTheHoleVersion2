@@ -34,7 +34,6 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_handicap_adjustment);
         findViewById(R.id.calculatehandicap).setOnClickListener(this);
         adjust = (EditText) findViewById(R.id.adjust);
-        mListView = (ListView) findViewById(R.id.nListView);
         retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
         retrievenet = (EditText) findViewById(R.id.retrievenet);
 
@@ -72,8 +71,6 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         array.add(" Net Score : " +uInfo.getNet());
         array.add(" Handicap : " + uInfo.getPlayerHandicap());
         array.add(" Full Name: " + uInfo.getFullName());
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-        mListView.setAdapter(adapter);
         retrievehandicap.setText(uInfo.getPlayerHandicap());
         retrievenet.setText(uInfo.getNet());
     }

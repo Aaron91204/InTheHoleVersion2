@@ -14,8 +14,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView7"
-        android:layout_marginLeft="91dp"
-        android:layout_marginStart="91dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginStart="89dp"
         android:ems="10"
         android:hint="Enter Your Handicap"
         android:inputType="number"
@@ -37,8 +37,10 @@
         android:id="@+id/calculatehandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_alignRight="@+id/textView6"
         android:layout_below="@+id/retrievenet"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:onClick="onClick"
         android:text="Calculate Handicap"
         android:textColorHint="#000000" />
@@ -50,26 +52,20 @@
         android:layout_alignLeft="@+id/retrievenet"
         android:layout_alignStart="@+id/retrievenet"
         android:layout_below="@+id/calculatehandicap"
+        android:layout_marginTop="19dp"
         android:ems="10"
         android:hint="Adjusted Handicap"
         android:inputType="number"
         android:textColorHint="#000000" />
 
-    <ListView
-        android:id="@+id/nListView"
-        android:layout_width="match_parent"
-        android:layout_height="150sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/adjust"></ListView>
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/retreivehandicap"
+        android:layout_alignLeft="@+id/textView7"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/retreivehandicap"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="29dp"
         android:text="Handicap Adjustment"
         android:textColor="#000000"
         android:textSize="20sp" />
@@ -81,6 +77,7 @@
         android:layout_alignLeft="@+id/retreivehandicap"
         android:layout_alignStart="@+id/retreivehandicap"
         android:layout_below="@+id/textView6"
+        android:layout_marginTop="25dp"
         android:text="Handicap"
         android:textSize="18sp" />
 
