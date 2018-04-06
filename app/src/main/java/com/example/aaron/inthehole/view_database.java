@@ -26,32 +26,22 @@ import java.util.ArrayList;
 
 public class view_database extends AppCompatActivity {
     private static final String TAG = "ViewDatabase";
-
-    //add Firebase Database stuff
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private  String userID;
     private FirebaseUser mCurrentUser;
     private DatabaseReference myRef;
-
-
     private ListView mListView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_database);
-
         mListView = (ListView) findViewById(R.id.listview);
-
-        //declare the database reference object. This is what we use to access the database.
-        //NOTE: Unless you are signed in, this will not be useable.
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         String userid=user.getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -64,7 +54,6 @@ public class view_database extends AppCompatActivity {
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                     toastMessage("Successfully signed out.");
                 }
-                // ...
             }
         };
 
@@ -84,8 +73,6 @@ public class view_database extends AppCompatActivity {
 
             }
         });
-
-
     }
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();

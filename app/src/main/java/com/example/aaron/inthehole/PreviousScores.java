@@ -35,9 +35,6 @@ public class PreviousScores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(com.example.aaron.inthehole.R.layout.activity_previous_scores);
         mListView = (ListView) findViewById(R.id.mlistview);
-
-        //declare the database reference object. This is what we use to access the database.
-        //NOTE: Unless you are signed in, this will not be useable.
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         String userid=user.getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 ");

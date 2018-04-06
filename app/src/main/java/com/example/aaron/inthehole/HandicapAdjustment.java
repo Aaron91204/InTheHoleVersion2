@@ -25,9 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class HandicapAdjustment extends AppCompatActivity implements View.OnClickListener {
-    private ListView mListView;
     EditText Handicap, Net,adjust, retrievehandicap , retrievenet;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +35,6 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         adjust = (EditText) findViewById(R.id.adjust);
         retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
         retrievenet = (EditText) findViewById(R.id.retrievenet);
-
-        //declare the database reference object. This is what we use to access the database.
-        //NOTE: Unless you are signed in, this will not be useable.
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         String userid=user.getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ");
@@ -59,12 +54,8 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
-
             }
         });
-
-
     }
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
@@ -76,15 +67,9 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         retrievenet.setText(uInfo.getNet());
     }
 
-
-    /**
-     * customizable toast
-     * @param message
-     */
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -107,7 +92,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     Net.requestFocus();
                     return;
                 }
-                double num1, num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18;
+                double num1, num2;
                 num1 = Double.parseDouble(Handicap.getText().toString());
                 num2 = Double.parseDouble(Net.getText().toString());
                 if(num2 >76 && num1>=36)
