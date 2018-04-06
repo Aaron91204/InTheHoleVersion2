@@ -263,7 +263,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/addbtn"
         android:layout_marginBottom="32dp"
-        android:text="Return To Profile"
+        android:text="Profile"
         android:textSize="12sp" />
 
     <TextView

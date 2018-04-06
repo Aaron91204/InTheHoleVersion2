@@ -91,4 +91,15 @@
         android:text="Net Score"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/handicap2profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calculatehandicap"
+        android:layout_alignStart="@+id/calculatehandicap"
+        android:layout_below="@+id/adjust"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:text="Profile" />
+
 </RelativeLayout>

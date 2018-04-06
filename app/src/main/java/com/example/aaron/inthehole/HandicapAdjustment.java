@@ -33,6 +33,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handicap_adjustment);
         findViewById(R.id.calculatehandicap).setOnClickListener(this);
+        findViewById(R.id.handicap2profile).setOnClickListener(this);
         adjust = (EditText) findViewById(R.id.adjust);
         retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
         retrievenet = (EditText) findViewById(R.id.retrievenet);
@@ -87,6 +88,10 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.handicap2profile:
+                finish();
+                startActivity(new Intent(HandicapAdjustment.this, ProfileActivity.class));
+                break;
             case R.id.calculatehandicap:
                  Handicap =(EditText)findViewById(R.id.retreivehandicap);
                  Net =(EditText)findViewById(R.id.retrievenet);
