@@ -121,7 +121,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
 
 
                 });
-                mBuilder.setNeutralButton("Finish Setup ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                mBuilder.setNeutralButton("Booking Confirmed ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
