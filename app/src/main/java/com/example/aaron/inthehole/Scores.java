@@ -1,10 +1,6 @@
 package com.example.aaron.inthehole;
 
-/**
- * Created by Aaron on 24/03/2018.
- */
-
-public class Scores {
+public class Scores { // Get and Set for Previous Scores
     private String Hole1;
     private String Hole2;
     private String Hole3;

@@ -82,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 }
                 else
                     {
-                        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfileActivity.this);
+                        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfileActivity.this);// popup to insert details into the Firebase
                         View mView = getLayoutInflater().inflate(R.layout.welcomemessage, null);
                         final EditText mPlayer1 = (EditText) mView.findViewById(R.id.namepopup);
                         final EditText mPlayer2 = (EditText) mView.findViewById(R.id.handicappopup);
@@ -149,7 +149,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         viewdetails = (Button) findViewById(R.id.viewdetails);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { // Update details
                 String name2= name.getText().toString().trim();
                 String handicap2= handicap.getText().toString().trim();
                 String age2= age.getText().toString().trim();
@@ -191,14 +191,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         });
         viewdetails.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //View Details Activity
                 Intent intent = new Intent(ProfileActivity.this, view_database.class);
                 startActivity(intent);
 
             }
         });
-
-
     }
     public class InputFilterMinMax implements InputFilter {
 

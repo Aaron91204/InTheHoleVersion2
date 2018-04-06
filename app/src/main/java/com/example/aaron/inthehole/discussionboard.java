@@ -37,7 +37,6 @@ public class discussionboard extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseUser mCurrentUser;
     private DatabaseReference mDatabaseUsers;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,37 +52,32 @@ public class discussionboard extends AppCompatActivity {
     }
     public void sendButtonClicked(View view)
     {
-        mCurrentUser = mAuth.getCurrentUser();
-        mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid());
+        mCurrentUser = mAuth.getCurrentUser(); // finds current user details
+        mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid()); // finds the details of the current user using their UID
         final String messageValue = editMessage.getText().toString().trim();
         if(!TextUtils.isEmpty(messageValue))
         {
             final DatabaseReference newPost = mDatabase.push();
             mDatabaseUsers.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
+                public void onDataChange(DataSnapshot dataSnapshot) { // message content
                     Date currentTime = Calendar.getInstance().getTime();
                     String currentTimeStamp = currentTime.toString();
-                    newPost.child("timeStamp").setValue(currentTimeStamp);
-                    newPost.child("content").setValue(messageValue);
-                    newPost.child("username").setValue(dataSnapshot.child("name").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    newPost.child("timeStamp").setValue(currentTimeStamp); // timestamp
+                    newPost.child("content").setValue(messageValue); //content
+                    newPost.child("username").setValue(dataSnapshot.child("name").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() { //name
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-
                         }
                     });
                 }
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
                 }
             });
             mMessageList.scrollToPosition(mMessageList.getAdapter().getItemCount());
             editMessage.setText("");
-
-
         }
-
     }
     @Override
     protected void onStart()
@@ -99,7 +93,6 @@ public class discussionboard extends AppCompatActivity {
                 viewHolder.setContent(model.getContent());
                 viewHolder.setUsername(model.getUsername());
                 viewHolder.setTime(model.getTime());
-
             }
         };
         mMessageList.setAdapter(FBRA);
@@ -129,5 +122,4 @@ public class discussionboard extends AppCompatActivity {
             time_content.setText(currentTimeStamp);
         }
     }
-
 }

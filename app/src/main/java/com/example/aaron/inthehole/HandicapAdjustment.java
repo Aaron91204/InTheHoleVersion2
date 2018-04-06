@@ -35,35 +35,31 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         adjust = (EditText) findViewById(R.id.adjust);
         retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
         retrievenet = (EditText) findViewById(R.id.retrievenet);
-        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        String userid=user.getUid();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ");
-
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser(); // get current details
+        String userid=user.getUid(); // gets currend ID
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 "); //Database Reference
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) { // Checks to see if a data snapshot exists and if it doesnt then it wont open the activity
                     showData(dataSnapshot);
                 } else {
                    finish();
-                    Toast.makeText(HandicapAdjustment.this, "You need to submit a score", Toast.LENGTH_SHORT).show();
-
-
+                    Toast.makeText(HandicapAdjustment.this, "You need to submit a score", Toast.LENGTH_SHORT).show(); // toast message if there is an error
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
     }
-    private void showData(DataSnapshot dataSnapshot) {
+    private void showData(DataSnapshot dataSnapshot) { // array to find the details of the member
         ArrayList<String> array  = new ArrayList<>();
         LeaderBoardScores uInfo = dataSnapshot.getValue(LeaderBoardScores.class);
         array.add(" Net Score : " +uInfo.getNet());
         array.add(" Handicap : " + uInfo.getPlayerHandicap());
         array.add(" Full Name: " + uInfo.getFullName());
-        retrievehandicap.setText(uInfo.getPlayerHandicap());
+        retrievehandicap.setText(uInfo.getPlayerHandicap()); // they are then displayed in these Edit Texts
         retrievenet.setText(uInfo.getNet());
     }
 
@@ -73,16 +69,16 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.handicap2profile:
+            case R.id.handicap2profile: // case to open up the Profile Activity
                 finish();
                 startActivity(new Intent(HandicapAdjustment.this, ProfileActivity.class));
                 break;
-            case R.id.calculatehandicap:
+            case R.id.calculatehandicap: // calculate handicap
                  Handicap =(EditText)findViewById(R.id.retreivehandicap);
                  Net =(EditText)findViewById(R.id.retrievenet);
                 String name2= Handicap.getText().toString().trim();
                 String net2= Net.getText().toString().trim();
-                if (name2.isEmpty()) {
+                if (name2.isEmpty()) { // entry validation
                     Handicap.setError("Please enter your Handicap");
                     Handicap.requestFocus();
                     return;
@@ -92,7 +88,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     Net.requestFocus();
                     return;
                 }
-                double num1, num2;
+                double num1, num2; // hanicap calculation
                 num1 = Double.parseDouble(Handicap.getText().toString());
                 num2 = Double.parseDouble(Net.getText().toString());
                 if(num2 >76 && num1>=36)
@@ -151,7 +147,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         }
 
     }
-    public class InputFilterMinMax implements InputFilter {
+    public class InputFilterMinMax implements InputFilter { // input validation
 
         private int min, max;
 

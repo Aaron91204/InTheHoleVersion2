@@ -2,11 +2,8 @@ package com.example.aaron.inthehole;
 
 import java.util.Date;
 
-/**
- * Created by Aaron on 15/03/2018.
- */
 
-public class Message {
+public class Message { // Get and Set for messages for discussion board
     private String content,username;
     private String timeStamp;
     public Message()

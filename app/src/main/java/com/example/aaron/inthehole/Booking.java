@@ -28,43 +28,37 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        findViewById(R.id.profilebtn).setOnClickListener(this);
+        findViewById(R.id.profilebtn).setOnClickListener(this); // OnClickListeners
         findViewById(R.id.booking9am).setOnClickListener(this);
         book9am = (Button)findViewById(R.id.booking9am);
         findViewById(R.id.booking915am).setOnClickListener(this);
         book915am = (Button)findViewById(R.id.booking915am);
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // DatabaseReference
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot) { // Checks to see if there is an data snapshot already exists
                 if (dataSnapshot.exists())
                 {
-                    book9am.setClickable(false);
-                    book9am.setBackgroundColor(Color.RED);
-
+                    book9am.setClickable(false); // if true the button becomes unclickable
+                    book9am.setBackgroundColor(Color.RED); // the button changes to red to show that it cannot be clicked
                 }
-
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
     }
-
-
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.profilebtn:
+            case R.id.profilebtn: // case to return to the Profile Activity
                 finish();
                 startActivity(new Intent(Booking.this, ProfileActivity.class));
                 break;
-            case R.id.booking9am:
-                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this);
-                View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null);
+            case R.id.booking9am: // case to start booking
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this); // Alert Dialog which is made
+                View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null); // find the dialog booking xml
                 final EditText mPlayer1 = (EditText) mView.findViewById(R.id.player1);
                 final EditText mPlayer2 = (EditText) mView.findViewById(R.id.player2);
                 final EditText mPlayer3 = (EditText) mView.findViewById(R.id.player3);
@@ -73,12 +67,12 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 final Button mBookingbtn = (Button) mView.findViewById(R.id.bookingbtn);
                 mBookingbtn.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View view) {
-                        String player1 = mPlayer1.getText().toString().trim();
+                    public void onClick(View view) { // sets the bookingbtn to be clicked
+                        String player1 = mPlayer1.getText().toString().trim(); // the next lines is to do with the validation for each edittext
                         String player2 = mPlayer2.getText().toString().trim();
                         String player4 = mPlayer4.getText().toString().trim();
                         String player3 = mPlayer3.getText().toString().trim();
-                        if (player1.isEmpty()) {
+                        if (player1.isEmpty()) { // each of these check to see that the edit texts has been entered and brings up a message if they havent
                             mPlayer1.setError("Please enter player 1");
                             mPlayer1.requestFocus();
                             return;
@@ -103,9 +97,9 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         String playerthree = mPlayer3.getText().toString();
                         String playerfour = mPlayer4.getText().toString();
                         String teetime = mTime.getText().toString().trim();
-                        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am");
+                        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // sets up the link to the Firebase
                         Map newPost = new HashMap();
-                        newPost.put("playerone", playerone);
+                        newPost.put("playerone", playerone); // each child which is added to the tables
                         newPost.put("playertwo", playertwo);
                         newPost.put("playerthree", playerthree);
                         newPost.put("playerfour", playerfour);
@@ -114,15 +108,13 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         Toast.makeText(Booking.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
                         book9am.setClickable(false);
                         book9am.setBackgroundColor(Color.RED);
-
-
-
                     }
 
 
                 });
-                mBuilder.setNeutralButton("Booking Confirmed ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
-                    public void onClick(DialogInterface dialog, int which) {
+                mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) { // Close the alert
                         dialog.dismiss();
                     }
                 });
@@ -130,13 +122,6 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
                 break;
-                
-
-
         }
-
-
-
     }
-
 }

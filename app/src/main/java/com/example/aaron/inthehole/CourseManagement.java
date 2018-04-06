@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class CourseManagement extends AppCompatActivity implements View.OnClickListener {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,22 +24,21 @@ public class CourseManagement extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.hole7btn).setOnClickListener(this);
         findViewById(R.id.hole8btn).setOnClickListener(this);
         findViewById(R.id.hole9btn).setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.profilebutton:
+            case R.id.profilebutton: // case to return to the profile
                 finish();
                 startActivity(new Intent(CourseManagement.this, ProfileActivity.class));
                 break;
-            case R.id.hole1btn:
+            case R.id.hole1btn: // each of these next cases create an alert dialog to show the images of each hole. This shows the holes and fairways
                 ImageView image =new ImageView(this);
-                image.setImageResource(R.drawable.hole1);
+                image.setImageResource(R.drawable.hole1); // the image used
                 AlertDialog.Builder builder =
                         new AlertDialog.Builder(this).
-                                setMessage("Hole 1").
+                                setMessage("Hole 1"). // Positive Messages
                                 setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

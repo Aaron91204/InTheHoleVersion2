@@ -1,15 +1,11 @@
 package com.example.aaron.inthehole;
 
-/**
- * Created by Aaron on 25/03/2018.
- */
-
 public class LeaderBoardScores {
     private String Gross;
     private String PlayerHandicap;
     private String Net;
     private String FullName;
-    public LeaderBoardScores ()
+    public LeaderBoardScores () // Sets up the LeaderBoard
     {
 
     }

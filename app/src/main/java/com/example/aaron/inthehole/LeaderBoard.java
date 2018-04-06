@@ -46,9 +46,7 @@ public class LeaderBoard extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ") .orderByChild("Net");
-
-
+        myRef = mFirebaseDatabase.getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ") .orderByChild("Net"); // Database Reference
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -73,29 +71,23 @@ public class LeaderBoard extends AppCompatActivity {
                 } else {
                     finish();
                     Toast.makeText(LeaderBoard.this, "You need to submit a score", Toast.LENGTH_SHORT).show();
-
-
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
 
     }
-    private void showData(DataSnapshot dataSnapshot) {
+    private void showData(DataSnapshot dataSnapshot) { // this array is used to get the Gross Net Name and Handicap of each user and they are then sorted with numiercally from lowest to highest
         ArrayList<String> array  = new ArrayList<>();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
-            LeaderBoardScores uInfo = ds.getValue(LeaderBoardScores.class);
+            LeaderBoardScores uInfo = ds.getValue(LeaderBoardScores.class); // Link to the leaderboardscores class
             array.add("Net: " +uInfo.getNet() );
             array.add("Name: " +uInfo.getFullName() + "   Gross:  " + uInfo.getGross()+ "   Handicap:  " + uInfo.getPlayerHandicap());
-
-
         }
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-        mListView.setAdapter(adapter);
+        mListView.setAdapter(adapter); // the results are then displayed in a ListView
     }
 
 

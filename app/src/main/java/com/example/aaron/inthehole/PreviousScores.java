@@ -37,7 +37,7 @@ public class PreviousScores extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.mlistview);
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         String userid=user.getUid();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 ");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 "); //Database Reference
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -52,17 +52,16 @@ public class PreviousScores extends AppCompatActivity {
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                     toastMessage("Successfully signed out.");
                 }
-                // ...
             }
         };
 
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot) { // Checks to see if a data snapshot exists and if it doesnt then it wont open the activity
                 if (dataSnapshot.exists()) {
                     showData(dataSnapshot);
                 } else {
-                    finish();
+                    finish(); // closes the activity if it doesnt
                     Toast.makeText(PreviousScores.this, "You need to submit a score", Toast.LENGTH_SHORT).show();
 
 
@@ -78,7 +77,7 @@ public class PreviousScores extends AppCompatActivity {
     }
     private void showData(DataSnapshot dataSnapshot) {
         ArrayList<String> array  = new ArrayList<>();
-            Scores uInfo = dataSnapshot.getValue(Scores.class);
+            Scores uInfo = dataSnapshot.getValue(Scores.class); // displays all hole scores
             array.add("Week 1 Score");
             array.add(" Hole 1 Par 5 : " +uInfo.getHole1());
             array.add(" Hole 2 Par 3 : " + uInfo.getHole2());
@@ -100,7 +99,7 @@ public class PreviousScores extends AppCompatActivity {
             array.add(" Hole 18 Par 5 : " + uInfo.getHole18());
 
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-        mListView.setAdapter(adapter);
+        mListView.setAdapter(adapter); // shown in a listview
     }
 
 
