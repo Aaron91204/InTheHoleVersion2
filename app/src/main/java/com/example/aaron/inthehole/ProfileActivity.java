@@ -230,11 +230,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.coursemanagement:
-                finish();
                 startActivity(new Intent(ProfileActivity.this, CourseManagement.class));
                 break;
             case R.id.scorecardbtn:
-                finish();
                 startActivity(new Intent(ProfileActivity.this, scoreboard1.class));
                 break;
             case R.id.logbtn:

@@ -520,7 +520,5 @@ Button btnadd,save;
         result.setText("");
         result1.setText("");
         net.setText("");
-        handicap.setText("");
-        name.setText("");
     }
 }
