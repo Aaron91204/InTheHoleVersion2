@@ -57,4 +57,11 @@
         android:textSize="25dp"
         android:textColorHint="#000000"/>
 
+    <Button
+        android:id="@+id/checkdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Details"
+        android:textSize="20sp" />
+
 </LinearLayout>

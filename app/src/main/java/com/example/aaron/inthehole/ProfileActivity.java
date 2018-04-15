@@ -90,8 +90,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         final EditText mPlayer3 = (EditText) mView.findViewById(R.id.agepopup);
                         mPlayer3.setFilters(new InputFilter[]{new scoreboard1.InputFilterMinMax("1", "100")});
                         final EditText mPlayer4 = (EditText) mView.findViewById(R.id.genderpopup);
-                        mBuilder.setNeutralButton("Save Details ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
-                            public void onClick(DialogInterface dialog, int which) {
+                        final Button mPlayer5 = (Button) mView.findViewById(R.id.checkdetails);
+                        mPlayer5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
                                 String player1 = mPlayer1.getText().toString().trim();
                                 String player2 = mPlayer2.getText().toString().trim();
                                 String player4 = mPlayer4.getText().toString().trim();
@@ -128,6 +130,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                 newPost.put("gender", playerfour);
                                 current_user_db.setValue(newPost);
                                 Toast.makeText(ProfileActivity.this, "Details Saved", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+                        mBuilder.setNeutralButton("Close Booking ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                            public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
                         });
