@@ -6,17 +6,18 @@
     android:layout_margin="10dp"
     android:orientation="vertical"
     android:background="@drawable/mesageshape">
+
     <TextView
+        android:id="@+id/usernametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#536DFE"
-        android:textStyle="bold"
-        android:text="Aaron"
-        android:padding="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:id="@+id/usernametext"
-        />
+        android:padding="5dp"
+        android:text="Aaron"
+        android:textColor="#536DFE"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/messageText"
@@ -26,6 +27,7 @@
         android:layout_marginRight="15dp"
         android:text="Hello Friends"
         android:textColor="#000000"
+        android:textSize="18dp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/messageTime"
@@ -35,7 +37,8 @@
         android:layout_marginRight="5dp"
         android:text=""
         android:textColor="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="18dp"/>
 
 
 </LinearLayout>

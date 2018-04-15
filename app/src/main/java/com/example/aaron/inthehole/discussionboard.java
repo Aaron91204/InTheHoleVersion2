@@ -1,5 +1,6 @@
 package com.example.aaron.inthehole;
 
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -50,13 +51,11 @@ public class discussionboard extends AppCompatActivity {
         mMessageList.setLayoutManager(linearLayoutManager);
         mAuth = FirebaseAuth.getInstance();
     }
-    public void sendButtonClicked(View view)
-    {
+    public void sendButtonClicked(View view) {
         mCurrentUser = mAuth.getCurrentUser(); // finds current user details
         mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid()); // finds the details of the current user using their UID
         final String messageValue = editMessage.getText().toString().trim();
-        if(!TextUtils.isEmpty(messageValue))
-        {
+        if (!TextUtils.isEmpty(messageValue)) {
             final DatabaseReference newPost = mDatabase.push();
             mDatabaseUsers.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -71,6 +70,7 @@ public class discussionboard extends AppCompatActivity {
                         }
                     });
                 }
+
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                 }
@@ -78,6 +78,11 @@ public class discussionboard extends AppCompatActivity {
             mMessageList.scrollToPosition(mMessageList.getAdapter().getItemCount());
             editMessage.setText("");
         }
+    }
+    public void home(View view)
+    {
+        finish();
+        startActivity(new Intent(discussionboard.this, ProfileActivity.class));
     }
     @Override
     protected void onStart()

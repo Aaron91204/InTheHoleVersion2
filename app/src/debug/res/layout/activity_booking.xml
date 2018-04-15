@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aaron.inthehole.Booking"
-    android:background="@drawable/background">
+    android:background="#8BC34A">
 
     <TextView
         android:id="@+id/bookingtext"
@@ -12,10 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:text="Booking Area"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textColor="#000000"/>
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/booking9am"
@@ -23,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/bookingtext"
+        android:layout_alignTop="@+id/bookingtext"
+        android:layout_marginTop="12dp"
         android:text="9am" />
 
     <Button
@@ -120,11 +123,12 @@
         android:id="@+id/booking1145am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/booking9am"
+        android:layout_alignBottom="@+id/booking9am"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/bookingtext"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:text="11:45am" />
 
     <Button
@@ -230,11 +234,10 @@
         android:id="@+id/textView5"
         android:layout_width="150sp"
         android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/bookingtext"
-        android:layout_alignStart="@+id/bookingtext"
-        android:layout_below="@+id/booking12pm"
+        android:layout_alignTop="@+id/booking930am"
+        android:layout_centerHorizontal="true"
         android:text="Please select a time that you will like to play. Times which are taken will be red"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 </RelativeLayout>

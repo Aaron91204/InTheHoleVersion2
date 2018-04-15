@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_above="@+id/linearLayout"
         android:id="@+id/messageRec"
-        android:background="@drawable/background">
+        android:background="#8BC34A">
 
     </android.support.v7.widget.RecyclerView>
     <LinearLayout
@@ -22,7 +22,7 @@
 
         <EditText
             android:id="@+id/editMessageE"
-            android:layout_width="300dp"
+            android:layout_width="240dp"
             android:layout_height="match_parent"
             android:hint="Enter a message" />
         <Button
@@ -30,6 +30,14 @@
             android:layout_height="wrap_content"
             android:text="send"
             android:onClick="sendButtonClicked"/>
+
+        <Button
+            android:id="@+id/messageprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="home"
+            android:text="Profile" />
     </LinearLayout>
 
 </RelativeLayout>

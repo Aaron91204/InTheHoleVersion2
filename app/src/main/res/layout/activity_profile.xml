@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.aaron.inthehole.MainActivity"
-    android:background="@drawable/background"
+    android:background="#8BC34A"
    >
 
 
@@ -15,20 +15,22 @@
         android:layout_height="wrap_content"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
-        android:hint="Update Your Full Name"
+        android:hint="Update Full Name"
         android:inputType="textPersonName"
         android:textColorHint="#000000"
-        android:textSize="16sp" />
+        android:textSize="18dp"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/handicap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Update Your Handicap"
+        android:hint="Update Handicap"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16sp" />
+        android:textSize="18dp"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/gender"
@@ -36,96 +38,98 @@
         android:layout_height="wrap_content"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
-        android:hint="Update Your Gender"
+        android:hint="Update Gender"
         android:inputType="textPersonName"
         android:textColorHint="#000000"
-        android:textSize="16sp" />
+        android:textSize="18dp"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Update Your Age"
+        android:hint="Update Age"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16sp" />
+        android:textSize="18dp"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/savebtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Save Details"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="View Details"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/coursemanagement"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Course Management"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/discussionboardbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Discussion Board"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/findus"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Find Us"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/scorecardbtn"
         android:layout_width="match_parent"
+        android:layout_height="38dp"
         android:text="ScoreCard"
-        android:textSize="12sp"
-        android:layout_height="38dp"/>
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/previousscore"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Previous Scores"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/leaderboard"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="LeaderBoard"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/bookingbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Booking System"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/handicapbutton"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Handicap Adjustment"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/logbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Logout"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
 </LinearLayout>

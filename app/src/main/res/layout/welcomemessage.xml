@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#8BC34A">
 
     <TextView
         android:id="@+id/Titlepopup"
@@ -10,16 +11,20 @@
         android:layout_gravity="center"
         android:text="Enter User Details"
         android:textAlignment="center"
-        android:textSize="25sp" />
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/namepopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Please enter your name"
         android:inputType="textPersonName"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+        android:textSize="25dp"
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/handicappopup"
@@ -27,7 +32,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your handicap"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="25dp"
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/agepopup"
@@ -35,15 +42,19 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Please enter your age"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="25dp"
+        android:textColorHint="#000000"/>
 
     <EditText
         android:id="@+id/genderpopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Please enter your gender"
         android:inputType="textPersonName"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+        android:textSize="25dp"
+        android:textColorHint="#000000"/>
 
 </LinearLayout>

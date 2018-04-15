@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aaron.inthehole.HandicapAdjustment"
-    android:background="@drawable/background">
+    android:background="#8BC34A">
 
     <EditText
         android:id="@+id/retreivehandicap"
@@ -19,87 +19,92 @@
         android:ems="10"
         android:hint="Enter Your Handicap"
         android:inputType="number"
-        android:textColorHint="#000000" />
+        android:textColorHint="#000000"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/retrievenet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
+        android:layout_alignLeft="@+id/retreivehandicap"
+        android:layout_alignStart="@+id/retreivehandicap"
         android:layout_below="@+id/textView8"
         android:ems="10"
         android:hint="Enter Your Net Score"
         android:inputType="number"
-        android:textColorHint="#000000" />
+        android:textColorHint="#000000"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/calculatehandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView6"
-        android:layout_alignRight="@+id/textView6"
         android:layout_below="@+id/retrievenet"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:onClick="onClick"
         android:text="Calculate Handicap"
-        android:textColorHint="#000000" />
+        android:textColorHint="#000000"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/adjust"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/retrievenet"
-        android:layout_alignStart="@+id/retrievenet"
+        android:layout_alignEnd="@+id/calculatehandicap"
+        android:layout_alignRight="@+id/calculatehandicap"
         android:layout_below="@+id/calculatehandicap"
-        android:layout_marginTop="19dp"
         android:ems="10"
         android:hint="Adjusted Handicap"
         android:inputType="number"
-        android:textColorHint="#000000" />
+        android:textColorHint="#000000"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView7"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginTop="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:text="Handicap Adjustment"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/retreivehandicap"
-        android:layout_alignStart="@+id/retreivehandicap"
+        android:layout_alignEnd="@+id/textView8"
+        android:layout_alignRight="@+id/textView8"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="8dp"
         android:text="Handicap"
-        android:textSize="18sp" />
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/retreivehandicap"
-        android:layout_alignStart="@+id/retreivehandicap"
         android:layout_below="@+id/retreivehandicap"
+        android:layout_centerHorizontal="true"
         android:text="Net Score"
-        android:textSize="18sp" />
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/handicap2profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/calculatehandicap"
-        android:layout_alignStart="@+id/calculatehandicap"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
         android:layout_below="@+id/adjust"
-        android:layout_marginLeft="41dp"
-        android:layout_marginStart="41dp"
-        android:text="Profile" />
+        android:layout_marginTop="32dp"
+        android:text="Profile"
+        android:textSize="20sp" />
 
 </RelativeLayout>

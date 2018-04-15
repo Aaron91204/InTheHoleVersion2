@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#8BC34A">
 
     <TextView
         android:id="@+id/textView4"
@@ -10,44 +11,53 @@
         android:layout_gravity="center"
         android:text="Booking"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="25sp"
-        android:textColor="#000000"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/player1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Please enter player one"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-        android:inputType="textPersonName" />
+        android:ems="10"
+        android:hint="Player 1"
+        android:inputType="textPersonName"
+        android:textColorHint="#000000"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/player2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Please enter player two"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-        android:inputType="textPersonName" />
+        android:ems="10"
+        android:hint="Player 2"
+        android:inputType="textPersonName"
+        android:textColorHint="#000000"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/player3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Please enter player three"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-        android:inputType="textPersonName" />
+        android:ems="10"
+        android:hint="Player 3"
+        android:inputType="textPersonName"
+        android:textColorHint="#000000"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/player4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Please enter player four"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-        android:inputType="textPersonName" />
+        android:ems="10"
+        android:hint="Player 4"
+        android:inputType="textPersonName"
+        android:textColorHint="#000000"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/timeedit"
@@ -55,13 +65,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="9am" />
+        android:text="9am"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/bookingbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book Tee Time"
+        android:text="Check Details"
         android:textSize="20sp" />
 
 </LinearLayout>
