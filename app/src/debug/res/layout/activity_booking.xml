@@ -236,7 +236,7 @@
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/booking930am"
         android:layout_centerHorizontal="true"
-        android:text="Please select a time that you will like to play. Times which are taken will be red"
+        android:text="Please select a time that you will like to play."
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="25sp" />

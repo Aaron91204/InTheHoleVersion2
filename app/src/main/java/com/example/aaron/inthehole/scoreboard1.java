@@ -112,6 +112,112 @@ Button btnadd,save;
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String first= firstNum.getText().toString().trim();
+                String second= secondNum.getText().toString().trim();
+                String third= thirdNum.getText().toString().trim();
+                String fourth= hole4.getText().toString().trim();
+                String fifth= hole5.getText().toString().trim();
+                String sixth= hole6.getText().toString().trim();
+                String seventh= hole7.getText().toString().trim();
+                String eighth= hole8.getText().toString().trim();
+                String ninth= hole9.getText().toString().trim();
+                String tenth= hole10.getText().toString().trim();
+                String eleventh= hole11.getText().toString().trim();
+                String twelth= hole12.getText().toString().trim();
+                String thirteen= hole13.getText().toString().trim();
+                String fourteen= hole14.getText().toString().trim();
+                String fifteen= hole15.getText().toString().trim();
+                String sixteen= hole16.getText().toString().trim();
+                String seventeen= hole17.getText().toString().trim();
+                String eighteen= hole18.getText().toString().trim();
+                if (first.isEmpty()) {
+                    firstNum.setError("Please enter score");
+                    firstNum.requestFocus();
+                    return;
+                }
+                if (second.isEmpty()) {
+                    secondNum.setError("Please enter score");
+                    secondNum.requestFocus();
+                    return;
+                }
+                if (third.isEmpty()) {
+                    thirdNum.setError("Please enter score");
+                    thirdNum.requestFocus();
+                    return;
+                }
+                if (fourth.isEmpty()) {
+                    hole4.setError("Please enter score");
+                    hole4.requestFocus();
+                    return;
+                }if (fifth.isEmpty()) {
+                    hole5.setError("Please enter score");
+                    hole5.requestFocus();
+                    return;
+                }
+                if (sixth.isEmpty()) {
+                    hole6.setError("Please enter score");
+                    hole6.requestFocus();
+                    return;
+                }
+                if (seventh.isEmpty()) {
+                    hole7.setError("Please enter score");
+                    hole7.requestFocus();
+                    return;
+                }if (eighth.isEmpty()) {
+                    hole8.setError("Please enter score");
+                    hole8.requestFocus();
+                    return;
+                }
+                if (ninth.isEmpty()) {
+                    hole9.setError("Please enter score");
+                    hole9.requestFocus();
+                    return;
+                }
+                if (tenth.isEmpty()) {
+                    hole10.setError("Please enter score");
+                    hole10.requestFocus();
+                    return;
+                }
+                if (eleventh.isEmpty()) {
+                    hole11.setError("Please enter score");
+                    hole11.requestFocus();
+                    return;
+                }
+                if (twelth.isEmpty()) {
+                    hole12.setError("Please enter score");
+                    hole12.requestFocus();
+                    return;
+                }
+                if (thirteen.isEmpty()) {
+                    hole13.setError("Please enter score");
+                    hole13.requestFocus();
+                    return;
+                }
+                if (fourteen.isEmpty()) {
+                    hole14.setError("Please enter score");
+                    hole14.requestFocus();
+                    return;
+                }
+                if (fifteen.isEmpty()) {
+                    hole15.setError("Please enter score");
+                    hole15.requestFocus();
+                    return;
+                }
+                if (sixteen.isEmpty()) {
+                    hole16.setError("Please enter score");
+                    hole16.requestFocus();
+                    return;
+                }
+                if (seventeen.isEmpty()) {
+                    hole17.setError("Please enter score");
+                    hole17.requestFocus();
+                    return;
+                }
+                if (eighteen.isEmpty()) {
+                    hole18.setError("Please enter score");
+                    hole18.requestFocus();
+                    return;
+                }
                 String name2= name.getText().toString().trim();
                 if (name2.isEmpty()) {
                     name.setError("Please enter your name");
