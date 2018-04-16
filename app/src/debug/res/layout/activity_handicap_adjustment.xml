@@ -45,7 +45,8 @@
         android:onClick="onClick"
         android:text="Calculate Handicap"
         android:textColorHint="#000000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:background="@drawable/rounded_button"/>
 
     <EditText
         android:id="@+id/adjust"
@@ -105,6 +106,7 @@
         android:layout_below="@+id/adjust"
         android:layout_marginTop="32dp"
         android:text="Profile"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:background="@drawable/rounded_button"/>
 
 </RelativeLayout>

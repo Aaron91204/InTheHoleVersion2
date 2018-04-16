@@ -25,14 +25,14 @@
         android:id="@+id/hole1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
-        android:layout_toLeftOf="@+id/hole10"
-        android:layout_toStartOf="@+id/hole10"
         android:ems="10"
         android:hint="Hole 1 Par 5"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole2"
@@ -45,7 +45,7 @@
         android:hint="Hole 2 Par 3"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole3"
@@ -58,7 +58,7 @@
         android:hint="Hole 3 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole4"
@@ -71,7 +71,7 @@
         android:hint="Hole 4 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole5"
@@ -84,7 +84,7 @@
         android:hint="Hole 5 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole6"
@@ -97,7 +97,7 @@
         android:hint="Hole 6 Par 5"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole7"
@@ -110,7 +110,7 @@
         android:hint="Hole 7 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole8"
@@ -123,7 +123,7 @@
         android:hint="Hole 8 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole9"
@@ -136,7 +136,7 @@
         android:hint="Hole 9 Par 3"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole10"
@@ -151,7 +151,7 @@
         android:hint="Hole 10 Par 5"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole11"
@@ -164,7 +164,7 @@
         android:hint="Hole 11 Par 3"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole12"
@@ -177,7 +177,7 @@
         android:hint="Hole 12 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole13"
@@ -190,7 +190,7 @@
         android:hint="Hole 13 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole14"
@@ -203,7 +203,7 @@
         android:hint="Hole 14 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole15"
@@ -216,7 +216,7 @@
         android:hint="Hole 15 Par 5"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole16"
@@ -229,7 +229,7 @@
         android:hint="Hole 16 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole17"
@@ -242,7 +242,7 @@
         android:hint="Hole 17 Par 4"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/hole18"
@@ -255,7 +255,7 @@
         android:hint="Hole 18 Par 3"
         android:inputType="number"
         android:textColorHint="#000000"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/profilebtn3"
@@ -265,7 +265,8 @@
         android:layout_alignStart="@+id/resetbtn"
         android:layout_alignTop="@+id/editname"
         android:text="Profile"
-        android:textSize="12dp" />
+        android:textSize="12dp"
+        />
 
     <TextView
         android:id="@+id/textView3"
@@ -286,7 +287,8 @@
         android:layout_alignTop="@+id/edithandicap"
         android:onClick="onAdd"
         android:text="Calculate Gross and Net"
-        android:textSize="12dp" />
+        android:textSize="12dp"
+        />
 
     <Button
         android:id="@+id/resetbtn"
@@ -331,7 +333,8 @@
         android:layout_below="@+id/hole9"
         android:onClick="calculate"
         android:text="Store Score"
-        android:textSize="12dp" />
+        android:textSize="12dp"
+        />
 
     <EditText
         android:id="@+id/edithandicap"

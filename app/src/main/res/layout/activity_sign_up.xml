@@ -72,7 +72,8 @@
                 android:text="Sign Up"
                 android:textAllCaps="false"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:background="@drawable/rounded_button"/>
 
             <TextView
                 android:id="@+id/textViewLogin"

@@ -17,88 +17,106 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/booking9am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/booking1115am"
+        android:layout_alignBottom="@+id/booking1115am"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/bookingtext"
-        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_button"
         android:text="9am" />
 
     <Button
         android:id="@+id/booking915am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/booking1130am"
+        android:layout_alignBottom="@+id/booking1130am"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/booking9am"
+        android:background="@drawable/rounded_button"
         android:text="9:15am" />
 
     <Button
         android:id="@+id/booking930am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking945am"
+        android:layout_alignBaseline="@+id/booking1145am"
+        android:layout_alignBottom="@+id/booking1145am"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="9:30am" />
 
     <Button
         android:id="@+id/booking945am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking10am"
+        android:layout_alignBaseline="@+id/booking12pm"
+        android:layout_alignBottom="@+id/booking12pm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="9:45am" />
 
     <Button
         android:id="@+id/booking10am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking1015am"
+        android:layout_alignBaseline="@+id/booking1215pm"
+        android:layout_alignBottom="@+id/booking1215pm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="10am" />
 
     <Button
         android:id="@+id/booking1015am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking1030am"
+        android:layout_alignBaseline="@+id/booking1230pm"
+        android:layout_alignBottom="@+id/booking1230pm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="10:15am" />
 
     <Button
         android:id="@+id/booking1030am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking1045am"
+        android:layout_alignBaseline="@+id/booking1245pm"
+        android:layout_alignBottom="@+id/booking1245pm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="10:30am" />
 
     <Button
         android:id="@+id/booking1045am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking11am"
+        android:layout_alignBaseline="@+id/booking1pm"
+        android:layout_alignBottom="@+id/booking1pm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="10:45am" />
 
     <Button
         android:id="@+id/booking11am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking1115am"
+        android:layout_alignBaseline="@+id/profilebtn"
+        android:layout_alignBottom="@+id/profilebtn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
         android:text="11am" />
 
     <Button
@@ -106,47 +124,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/booking1130am"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button"
         android:text="11:15am" />
 
     <Button
         android:id="@+id/booking1130am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/profilebtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_above="@+id/booking1145am"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
         android:text="11:30am" />
 
     <Button
         android:id="@+id/booking1145am"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/booking9am"
-        android:layout_alignBottom="@+id/booking9am"
+        android:layout_above="@+id/booking12pm"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/rounded_button"
         android:text="11:45am" />
 
     <Button
         android:id="@+id/booking1215pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/booking1230pm"
-        android:layout_alignStart="@+id/booking1230pm"
-        android:layout_below="@+id/booking915am"
+        android:layout_above="@+id/booking1230pm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
         android:text="12:15pm" />
 
     <Button
         android:id="@+id/booking12pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/booking1145am"
-        android:layout_alignStart="@+id/booking1145am"
-        android:layout_below="@+id/booking1145am"
+        android:layout_above="@+id/booking1215pm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
         android:text="12pm" />
 
     <Button
@@ -154,8 +179,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/booking1245pm"
-        android:layout_alignLeft="@+id/booking1245pm"
-        android:layout_alignStart="@+id/booking1245pm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
         android:text="12:30pm" />
 
     <Button
@@ -163,8 +190,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/booking1pm"
-        android:layout_alignLeft="@+id/booking1pm"
-        android:layout_alignStart="@+id/booking1pm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/rounded_button"
         android:text="12:45pm" />
 
     <Button
@@ -172,55 +201,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/booking115pm"
-        android:layout_alignLeft="@+id/booking115pm"
-        android:layout_alignStart="@+id/booking115pm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
         android:text="1pm" />
 
     <Button
         android:id="@+id/booking115pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/booking130pm"
-        android:layout_alignLeft="@+id/booking130pm"
-        android:layout_alignStart="@+id/booking130pm"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/rounded_button"
         android:text="1:15pm" />
-
-    <Button
-        android:id="@+id/booking130pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/booking145pm"
-        android:layout_alignLeft="@+id/booking145pm"
-        android:layout_alignStart="@+id/booking145pm"
-        android:text="1:30pm" />
-
-    <Button
-        android:id="@+id/booking145pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_above="@+id/booking2pm"
-        android:layout_alignLeft="@+id/booking2pm"
-        android:layout_alignStart="@+id/booking2pm"
-        android:text="1:45pm" />
-
-    <Button
-        android:id="@+id/booking2pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/booking215pm"
-        android:layout_alignLeft="@+id/booking215pm"
-        android:layout_alignStart="@+id/booking215pm"
-        android:text="2pm" />
-
-    <Button
-        android:id="@+id/booking215pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/profilebtn"
-        android:layout_alignLeft="@+id/booking1145am"
-        android:layout_alignStart="@+id/booking1145am"
-        android:text="2:15pm" />
 
     <Button
         android:id="@+id/profilebtn"
@@ -228,14 +223,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Profile" />
+        android:text="Profile"
+        android:background="@drawable/rounded_button"/>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="150sp"
         android:layout_height="match_parent"
-        android:layout_alignTop="@+id/booking930am"
+        android:layout_alignTop="@+id/booking1115am"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="Please select a time that you will like to play."
         android:textAlignment="center"
         android:textColor="#000000"

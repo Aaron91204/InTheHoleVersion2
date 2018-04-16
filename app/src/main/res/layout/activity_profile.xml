@@ -60,76 +60,87 @@
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Save Details"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="View Details"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/coursemanagement"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Course Management"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/discussionboardbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Discussion Board"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/findus"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Find Us"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/scorecardbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="ScoreCard"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/previousscore"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Previous Scores"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/leaderboard"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="LeaderBoard"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/bookingbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Booking System"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/handicapbutton"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Handicap Adjustment"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/logbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Logout"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:background="@drawable/rounded_button"/>
 
 </LinearLayout>
