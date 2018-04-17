@@ -261,12 +261,12 @@
         android:id="@+id/profilebtn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/resetbtn"
+        android:background="@drawable/rounded_button"
         android:text="Profile"
-        android:textSize="12dp"
-        android:background="@drawable/rounded_button"/>
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -383,11 +383,13 @@
 
     <Button
         android:id="@+id/savedetails"
-        android:layout_width="100sp"
+        android:layout_width="80sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addbtn"
-        android:layout_toEndOf="@+id/resetbtn"
-        android:layout_toRightOf="@+id/resetbtn"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/profilebtn3"
+        android:layout_toRightOf="@+id/profilebtn3"
         android:background="@drawable/rounded_button"
         android:text="Enter Score"
         android:textSize="12dp" />
