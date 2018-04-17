@@ -10,12 +10,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/gethandicap"
+        android:layout_toRightOf="@+id/gethandicap"
         android:text="Score Card"
         android:textColor="#000000"
         android:textSize="30dp"
@@ -27,7 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginTop="33dp"
         android:ems="10"
         android:hint="Hole 1 Par 5"
         android:inputType="number"
@@ -261,12 +261,12 @@
         android:id="@+id/profilebtn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/resetbtn"
-        android:layout_alignStart="@+id/resetbtn"
-        android:layout_alignTop="@+id/editname"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:text="Profile"
         android:textSize="12dp"
-        />
+        android:background="@drawable/rounded_button"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -280,24 +280,24 @@
 
     <Button
         android:id="@+id/addbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/gethandicap"
-        android:layout_alignStart="@+id/gethandicap"
-        android:layout_alignTop="@+id/edithandicap"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/gethandicap"
+        android:background="@drawable/rounded_button"
         android:onClick="onAdd"
         android:text="Calculate Gross and Net"
-        android:textSize="12dp"
-        />
+        android:textSize="12dp" />
 
     <Button
         android:id="@+id/resetbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/addbtn"
-        android:layout_alignStart="@+id/addbtn"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="24dp"
+        android:layout_below="@+id/addbtn"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2"
+        android:background="@drawable/rounded_button"
         android:onClick="clear"
         android:text="Reset All"
         android:textSize="12dp" />
@@ -328,21 +328,21 @@
         android:id="@+id/gethandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hole9"
-        android:layout_alignStart="@+id/hole9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/hole9"
+        android:background="@drawable/rounded_button"
         android:onClick="calculate"
         android:text="Store Score"
-        android:textSize="12dp"
-        />
+        android:textSize="12dp" />
 
     <EditText
         android:id="@+id/edithandicap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/handicapbutton"
         android:layout_alignLeft="@+id/editresult"
         android:layout_alignStart="@+id/editresult"
-        android:layout_alignTop="@+id/handicapbutton"
         android:editable="false"
         android:ems="10"
         android:hint="Handicap"
@@ -385,9 +385,10 @@
         android:id="@+id/savedetails"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/resetbtn"
+        android:layout_below="@+id/addbtn"
         android:layout_toEndOf="@+id/resetbtn"
         android:layout_toRightOf="@+id/resetbtn"
+        android:background="@drawable/rounded_button"
         android:text="Enter Score"
         android:textSize="12dp" />
 
