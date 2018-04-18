@@ -100,7 +100,6 @@
         android:layout_alignEnd="@+id/textView8"
         android:layout_alignRight="@+id/textView8"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="8dp"
         android:text="Handicap"
         android:textColor="#000000"
         android:textSize="25sp"
@@ -123,7 +122,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/adjust"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
         android:background="@drawable/rounded_button"
         android:text="Profile"
         android:textSize="20sp" />
@@ -146,6 +144,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/popper1"
+        android:visibility="gone"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/handicap2profile"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sadgolfer"
         android:visibility="gone"/>
 
 </RelativeLayout>

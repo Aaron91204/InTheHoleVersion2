@@ -28,7 +28,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class HandicapAdjustment extends AppCompatActivity implements View.OnClickListener {
     EditText Handicap, Net,adjust, retrievehandicap , retrievenet;
-    GifImageView photo1,photo2,photo3,photo4;
+    GifImageView photo1,photo2,photo3,photo4,photo5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         photo2 = (GifImageView)findViewById(R.id.gifImageView2);
         photo3 = (GifImageView)findViewById(R.id.gifImageView3);
         photo4 = (GifImageView)findViewById(R.id.gifImageView4);
+        photo5 = (GifImageView)findViewById(R.id.gifImageView5);
         adjust = (EditText) findViewById(R.id.adjust);
         retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
         retrievenet = (EditText) findViewById(R.id.retrievenet);
@@ -109,6 +110,12 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                 double sum;
                 sum = num1 +0.1;
                 adjust.setText(Double.toString(sum));
+                    photo1.setVisibility(View.GONE);
+                    photo2.setVisibility(View.GONE);
+                    photo3.setVisibility(View.GONE);
+                    photo4.setVisibility(View.GONE);
+                    photo5.setVisibility(View.VISIBLE);
+                    Toast.makeText(this, "Bad Score = Increase In Handicap", Toast.LENGTH_SHORT).show();
                 }
                 else if(num2<72 && num1>=18 && num1<36 )
                 {
@@ -123,6 +130,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     photo2.setVisibility(View.VISIBLE);
                     photo3.setVisibility(View.VISIBLE);
                     photo4.setVisibility(View.VISIBLE);
+                    photo5.setVisibility(View.GONE);
                     Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
 
                 }
@@ -140,6 +148,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     photo2.setVisibility(View.VISIBLE);
                     photo3.setVisibility(View.VISIBLE);
                     photo4.setVisibility(View.VISIBLE);
+                    photo5.setVisibility(View.GONE);
                 }
                 else if(num2<72 && num1>=0 && num1<5 )
                 {
@@ -155,6 +164,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     photo2.setVisibility(View.VISIBLE);
                     photo3.setVisibility(View.VISIBLE);
                     photo4.setVisibility(View.VISIBLE);
+                    photo5.setVisibility(View.GONE);
                 }
                 else if(num2>72 && num2<=76 )
                 {
@@ -166,6 +176,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     photo2.setVisibility(View.GONE);
                     photo3.setVisibility(View.GONE);
                     photo4.setVisibility(View.GONE);
+                    photo5.setVisibility(View.GONE);
                 }
                 break;
         }
