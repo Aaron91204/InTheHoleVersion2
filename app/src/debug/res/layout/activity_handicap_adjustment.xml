@@ -7,6 +7,26 @@
     tools:context="com.example.aaron.inthehole.HandicapAdjustment"
     android:background="#8BC34A">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/gifImageView3"
+        android:src="@drawable/handclaps"
+        android:visibility="gone"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/gifImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/handclaps"
+        android:visibility="gone"/>
+
     <EditText
         android:id="@+id/retreivehandicap"
         android:layout_width="wrap_content"
@@ -107,5 +127,25 @@
         android:background="@drawable/rounded_button"
         android:text="Profile"
         android:textSize="20sp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/gifImageView"
+        android:src="@drawable/popper1"
+        android:visibility="gone"
+        android:id="@+id/gifImageView2"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/popper1"
+        android:visibility="gone"/>
 
 </RelativeLayout>

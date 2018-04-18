@@ -26,6 +26,7 @@ import java.util.Map;
 
 public class Booking extends AppCompatActivity implements View.OnClickListener {
     public Button book9am, book915am;
+    public ImageView photo1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
         book9am = (Button)findViewById(R.id.booking9am);
         findViewById(R.id.booking915am).setOnClickListener(this);
         book915am = (Button)findViewById(R.id.booking915am);
+        photo1 =(ImageView)findViewById(R.id.gifImageView);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // DatabaseReference
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
