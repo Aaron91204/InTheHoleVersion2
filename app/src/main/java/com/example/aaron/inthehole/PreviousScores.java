@@ -1,5 +1,6 @@
 package com.example.aaron.inthehole;
 
+import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class PreviousScores extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(com.example.aaron.inthehole.R.layout.activity_previous_scores);
         mListView = (ListView) findViewById(R.id.mlistview);
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();

@@ -2,6 +2,7 @@ package com.example.aaron.inthehole;
 
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -37,6 +38,7 @@ public class view_database extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_view_database);
         mListView = (ListView) findViewById(R.id.listview);
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();

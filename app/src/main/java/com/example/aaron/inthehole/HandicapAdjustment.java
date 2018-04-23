@@ -1,6 +1,7 @@
 package com.example.aaron.inthehole;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_handicap_adjustment);
         findViewById(R.id.calculatehandicap).setOnClickListener(this);
         findViewById(R.id.handicap2profile).setOnClickListener(this);

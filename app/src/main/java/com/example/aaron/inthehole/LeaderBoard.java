@@ -1,5 +1,6 @@
 package com.example.aaron.inthehole;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -40,6 +41,7 @@ public class LeaderBoard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_leader_board);
         mListView = (ListView) findViewById(R.id.nlistview);
         mAuth = FirebaseAuth.getInstance();

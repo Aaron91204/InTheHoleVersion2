@@ -3,6 +3,7 @@ package com.example.aaron.inthehole;
 import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -30,6 +31,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         findViewById(R.id.profilebtn).setOnClickListener(this); // OnClickListeners

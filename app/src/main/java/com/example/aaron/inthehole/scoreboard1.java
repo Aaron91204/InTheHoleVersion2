@@ -1,6 +1,7 @@
 package com.example.aaron.inthehole;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -59,6 +60,7 @@ Button btnadd,save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_scoreboard1);
         findViewById(profilebtn3).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();

@@ -1,7 +1,8 @@
 package com.example.aaron.inthehole;
 
 import android.content.Intent;
-        import android.support.annotation.NonNull;
+import android.content.pm.ActivityInfo;
+import android.support.annotation.NonNull;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.util.Patterns;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);

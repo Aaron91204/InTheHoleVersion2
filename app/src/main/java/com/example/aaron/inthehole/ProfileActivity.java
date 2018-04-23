@@ -2,6 +2,7 @@ package com.example.aaron.inthehole;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -41,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_profile);
         findViewById(R.id.coursemanagement).setOnClickListener(this);
         findViewById(R.id.scorecardbtn).setOnClickListener(this);
