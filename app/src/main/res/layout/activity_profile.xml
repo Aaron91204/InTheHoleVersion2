@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -64,12 +67,24 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="View Details"
         android:textSize="14sp"
         android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/coursemanagement"
@@ -80,12 +95,24 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/discussionboardbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Discussion Board"
         android:textSize="14sp"
         android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/findus"
@@ -96,12 +123,25 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/scorecardbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="ScoreCard"
         android:textSize="14sp"
         android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:text=""
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/previousscore"
@@ -112,12 +152,26 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:text=""
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/leaderboard"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="LeaderBoard"
         android:textSize="14sp"
         android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:text=""
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/bookingbtn"
@@ -128,6 +182,13 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:text=""
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/handicapbutton"
         android:layout_width="match_parent"
         android:layout_height="38dp"
@@ -136,11 +197,19 @@
         android:background="@drawable/rounded_button"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#8BC34A"
+        android:text=""
+        android:enabled="false"/>
+
+    <Button
         android:id="@+id/logbtn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:background="@drawable/rounded_button"
         android:text="Logout"
-        android:textSize="14sp"
-        android:background="@drawable/rounded_button"/>
+        android:textSize="14sp" />
 
 </LinearLayout>
+</ScrollView>
