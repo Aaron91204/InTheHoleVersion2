@@ -52,7 +52,6 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
     }
@@ -112,16 +111,17 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         newPost.put("playerfour", playerfour);
                         newPost.put("teetime", teetime);
                         current_user_db.setValue(newPost);
-                        Toast.makeText(Booking.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
-                        book9am.setClickable(false);
-                        book9am.setBackgroundColor(Color.RED);
+                        Toast.makeText(Booking.this, "Are you happy with your details? ", Toast.LENGTH_SHORT).show();
                     }
 
                 });
-                mBuilder.setPositiveButton("Close Dialog", new DialogInterface.OnClickListener() {
+                mBuilder.setPositiveButton("Confirm Booking", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) { // Close the alert
                         dialog.dismiss();
+                        book9am.setClickable(false);
+                        book9am.setBackgroundColor(Color.RED);
+                        Toast.makeText(Booking.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
                     }
                 });
                 mBuilder.setView(mView);

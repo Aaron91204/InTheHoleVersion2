@@ -71,8 +71,8 @@
         android:id="@+id/bookingbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check Details"
-        android:textSize="20sp"
-        android:background="@drawable/rounded_button"/>
+        android:background="@drawable/rounded_button"
+        android:text="Book Tee Time"
+        android:textSize="20sp" />
 
 </LinearLayout>
