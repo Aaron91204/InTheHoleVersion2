@@ -65,7 +65,7 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.booking9am: // case to start booking
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this); // Alert Dialog which is made
-                View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null); // find the dialog booking xml
+                final View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null); // find the dialog booking xml
                 final EditText mPlayer1 = (EditText) mView.findViewById(R.id.player1);
                 final EditText mPlayer2 = (EditText) mView.findViewById(R.id.player2);
                 final EditText mPlayer3 = (EditText) mView.findViewById(R.id.player3);
@@ -116,7 +116,6 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         book9am.setClickable(false);
                         book9am.setBackgroundColor(Color.RED);
                     }
-
 
                 });
                 mBuilder.setPositiveButton("Close Dialog", new DialogInterface.OnClickListener() {

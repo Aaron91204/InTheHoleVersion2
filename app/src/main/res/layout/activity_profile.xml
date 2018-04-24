@@ -19,7 +19,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Update Full Name"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="18dp"
         android:gravity="center"/>
@@ -42,7 +42,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Update Gender"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="18dp"
         android:gravity="center"/>

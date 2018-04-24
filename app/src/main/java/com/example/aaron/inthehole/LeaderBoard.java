@@ -72,7 +72,7 @@ public class LeaderBoard extends AppCompatActivity {
                     showData(dataSnapshot);
                 } else {
                     finish();
-                    Toast.makeText(LeaderBoard.this, "You need to submit a score", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LeaderBoard.this, "No Scores Entered", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

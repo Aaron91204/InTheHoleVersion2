@@ -22,7 +22,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Player 1"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="25dp" />
 
@@ -33,7 +33,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Player 2"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="25dp" />
 
@@ -44,7 +44,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Player 3"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="25dp" />
 
@@ -55,7 +55,7 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:ems="10"
         android:hint="Player 4"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:textColorHint="#000000"
         android:textSize="25dp" />
 
@@ -64,7 +64,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text="9am"
         android:textSize="25dp" />
 
