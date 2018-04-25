@@ -134,7 +134,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
                             }
                         });
-                        mBuilder.setNeutralButton("Close Booking ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
+                        mBuilder.setNeutralButton("Close Dialog ", new DialogInterface.OnClickListener() { // define the 'Cancel' button
                             public void onClick(DialogInterface dialog, int which) { //dismiss dialog
                                 dialog.dismiss();
                             }

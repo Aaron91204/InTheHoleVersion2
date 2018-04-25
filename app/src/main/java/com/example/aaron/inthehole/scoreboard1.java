@@ -583,7 +583,7 @@ Button btnadd,save;
         String seventeen= hole17.getText().toString();
         String eighteen= hole18.getText().toString();
         String user_id = mAuth.getCurrentUser().getUid(); // getting the current users UID
-        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Hole_Scores_17th_March_2018 ").child(user_id); //Database Reference to where the data will be stored
+        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Hole_Scores_25th_April_2018 ").child(user_id); //Database Reference to where the data will be stored
         Map newPost1 = new HashMap();
         newPost1.put("Hole1",first); // each component which will be stored into the database
         newPost1.put("Hole2",second);

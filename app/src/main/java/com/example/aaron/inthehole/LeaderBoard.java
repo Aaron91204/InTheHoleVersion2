@@ -48,7 +48,7 @@ public class LeaderBoard extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser(); // gets current user
         userID = user.getUid(); // gets current user ID
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ") .orderByChild("Net"); // Database Reference
+        myRef = mFirebaseDatabase.getReference().child("Scores").child("Net_and_Gross_Scores_Week_25th_April _2018 ") .orderByChild("Net"); // Database Reference
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

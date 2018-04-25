@@ -40,7 +40,7 @@ public class PreviousScores extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.mlistview); //listview set up
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser(); //gets current user
         String userid=user.getUid(); // gets current user's UID
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 "); //Database Reference
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_25th_April_2018 "); //Database Reference
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {

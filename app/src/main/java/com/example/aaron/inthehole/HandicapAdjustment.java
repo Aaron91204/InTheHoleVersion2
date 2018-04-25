@@ -47,7 +47,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
         retrievenet = (EditText) findViewById(R.id.retrievenet);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser(); // get current details
         String userid=user.getUid(); // gets current ID
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 "); //Database Reference
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_25th_April _2018 "); //Database Reference
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -106,6 +106,12 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     double sum;
                     sum = num1;
                     adjust.setText(Double.toString(sum));
+                    photo1.setVisibility(View.GONE); // postive gifs hidden
+                    photo2.setVisibility(View.GONE); // postive gifs hidden
+                    photo3.setVisibility(View.GONE); // postive gifs hidden
+                    photo4.setVisibility(View.GONE); // postive gifs hidden
+                    photo5.setVisibility(View.GONE); // negative gifs shown
+                    Toast.makeText(this, "No Change", Toast.LENGTH_SHORT).show();
                 }
                 else if(num2 >76 && num1<=36) //net above 76 and handicap is then less 36
                 {
