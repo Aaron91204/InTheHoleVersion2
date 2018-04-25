@@ -27,23 +27,20 @@ import java.util.Map;
 
 public class Booking extends AppCompatActivity implements View.OnClickListener {
     public Button book9am, book915am;
-    public ImageView photo1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // sets the orientation of the application to always be portrait
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        findViewById(R.id.profilebtn).setOnClickListener(this); // OnClickListeners
+        findViewById(R.id.profilebtn).setOnClickListener(this); // OnClickListeners for buttons in the applications
         findViewById(R.id.booking9am).setOnClickListener(this);
-        book9am = (Button)findViewById(R.id.booking9am);
+        book9am = (Button)findViewById(R.id.booking9am);//sets name to specific button
         findViewById(R.id.booking915am).setOnClickListener(this);
         book915am = (Button)findViewById(R.id.booking915am);
-        photo1 =(ImageView)findViewById(R.id.gifImageView);
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // DatabaseReference
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // DatabaseReference where the information will then be stored
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) { // Checks to see if there is an data snapshot already exists
+            public void onDataChange(DataSnapshot dataSnapshot) { // Checks to see if there is a data snapshot already exists
                 if (dataSnapshot.exists())
                 {
                     book9am.setClickable(false); // if true the button becomes unclickable
@@ -56,16 +53,16 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
         });
     }
     @Override
-    public void onClick(View view) {
+    public void onClick(View view) { // onclick method
         switch (view.getId()) {
             case R.id.profilebtn: // case to return to the Profile Activity
                 finish();
-                startActivity(new Intent(Booking.this, ProfileActivity.class));
+                startActivity(new Intent(Booking.this, ProfileActivity.class)); //intent to open Profile Activity
                 break;
             case R.id.booking9am: // case to start booking
-                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this); // Alert Dialog which is made
-                final View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null); // find the dialog booking xml
-                final EditText mPlayer1 = (EditText) mView.findViewById(R.id.player1);
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Booking.this); // Alert Dialog which opens when the 9am button is clicked
+                final View mView = getLayoutInflater().inflate(R.layout.dialog_booking, null); // find the dialog booking xml, this is the layout for the alert dialog
+                final EditText mPlayer1 = (EditText) mView.findViewById(R.id.player1); // finds all part of the dialog_booking which you are using
                 final EditText mPlayer2 = (EditText) mView.findViewById(R.id.player2);
                 final EditText mPlayer3 = (EditText) mView.findViewById(R.id.player3);
                 final EditText mPlayer4 = (EditText) mView.findViewById(R.id.player4);
@@ -105,26 +102,26 @@ public class Booking extends AppCompatActivity implements View.OnClickListener {
                         String teetime = mTime.getText().toString().trim();
                         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Booking").child("9am"); // sets up the link to the Firebase
                         Map newPost = new HashMap();
-                        newPost.put("playerone", playerone); // each child which is added to the tables
+                        newPost.put("playerone", playerone); // represents each player playing at that time, these will be inputted into the database
                         newPost.put("playertwo", playertwo);
                         newPost.put("playerthree", playerthree);
                         newPost.put("playerfour", playerfour);
                         newPost.put("teetime", teetime);
-                        current_user_db.setValue(newPost);
+                        current_user_db.setValue(newPost); //posted to the database
                         Toast.makeText(Booking.this, "Are you happy with your details? ", Toast.LENGTH_SHORT).show();
                     }
 
                 });
                 mBuilder.setPositiveButton("Confirm Booking", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) { // Close the alert
+                    public void onClick(DialogInterface dialog, int which) { // Confirms booking and then closes the alert
                         dialog.dismiss();
                         book9am.setClickable(false);
                         book9am.setBackgroundColor(Color.RED);
                         Toast.makeText(Booking.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                mBuilder.setView(mView);
+                mBuilder.setView(mView); // builds the alert dialog
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
                 break;

@@ -42,27 +42,27 @@ public class discussionboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//sets orientation of app to portrait
         setContentView(R.layout.activity_discussionboard);
         editMessage=(EditText)findViewById(R.id.editMessageE);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Messages");
-        mMessageList = (RecyclerView)findViewById(R.id.messageRec);
-        mMessageList.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Messages"); // Database Reference
+        mMessageList = (RecyclerView)findViewById(R.id.messageRec); // Listview to output images
+        mMessageList.setHasFixedSize(true); //sets the size
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this); // Linear Layout Manager
         linearLayoutManager.setStackFromEnd(true);
-        mMessageList.setLayoutManager(linearLayoutManager);
-        mAuth = FirebaseAuth.getInstance();
+        mMessageList.setLayoutManager(linearLayoutManager); // set the listview to be the Linear Layout
+        mAuth = FirebaseAuth.getInstance(); // Firebase Instance
     }
     public void sendButtonClicked(View view) {
         mCurrentUser = mAuth.getCurrentUser(); // finds current user details
         mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid()); // finds the details of the current user using their UID
-        final String messageValue = editMessage.getText().toString().trim();
+        final String messageValue = editMessage.getText().toString().trim(); //trims the message to make it a string
         if (!TextUtils.isEmpty(messageValue)) {
-            final DatabaseReference newPost = mDatabase.push();
+            final DatabaseReference newPost = mDatabase.push(); // pushes the message to the database
             mDatabaseUsers.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) { // message content
-                    Date currentTime = Calendar.getInstance().getTime();
+                    Date currentTime = Calendar.getInstance().getTime(); //timestamp for each message
                     String currentTimeStamp = currentTime.toString();
                     newPost.child("timeStamp").setValue(currentTimeStamp); // timestamp
                     newPost.child("content").setValue(messageValue); //content
@@ -77,11 +77,11 @@ public class discussionboard extends AppCompatActivity {
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
-            mMessageList.scrollToPosition(mMessageList.getAdapter().getItemCount());
-            editMessage.setText("");
+            mMessageList.scrollToPosition(mMessageList.getAdapter().getItemCount());//allows the listview to be scrollable
+            editMessage.setText(""); //the edit message will always be blank
         }
     }
-    public void home(View view)
+    public void home(View view) // intent to open the profile activity
     {
         finish();
         startActivity(new Intent(discussionboard.this, ProfileActivity.class));
@@ -90,13 +90,13 @@ public class discussionboard extends AppCompatActivity {
     protected void onStart()
     {
       super.onStart();
-        FirebaseRecyclerAdapter<Message,MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
+        FirebaseRecyclerAdapter<Message,MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>( //recycles the listview and finding the format of singlemessagelayout
                 Message.class,
                 R.layout.singlemessagelayout,
                 MessageViewHolder.class,
                 mDatabase) {
             @Override
-            protected void populateViewHolder(MessageViewHolder viewHolder, Message model, int position) {
+            protected void populateViewHolder(MessageViewHolder viewHolder, Message model, int position) { //set the details to be outputted
                 viewHolder.setContent(model.getContent());
                 viewHolder.setUsername(model.getUsername());
                 viewHolder.setTime(model.getTime());
@@ -104,7 +104,7 @@ public class discussionboard extends AppCompatActivity {
         };
         mMessageList.setAdapter(FBRA);
     }
-    public static class MessageViewHolder extends RecyclerView.ViewHolder
+    public static class MessageViewHolder extends RecyclerView.ViewHolder // setting the information and displaying it in the format
     {
         View mView;
         public MessageViewHolder(View itemView) {

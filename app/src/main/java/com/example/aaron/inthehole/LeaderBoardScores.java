@@ -9,6 +9,7 @@ public class LeaderBoardScores {
     {
 
     }
+    // gets and sets each of the above String to be used in the leaderboard activity
 
     public String getGross() {
         return Gross;

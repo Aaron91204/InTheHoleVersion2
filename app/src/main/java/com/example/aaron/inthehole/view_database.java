@@ -38,12 +38,12 @@ public class view_database extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//setting the orientation to be portrait
         setContentView(R.layout.activity_view_database);
         mListView = (ListView) findViewById(R.id.listview);
-        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-        String userid=user.getUid();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser(); //gets current user's details
+        String userid=user.getUid();//gets the current user's UID
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users"); //Database Reference for the Users table
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -61,10 +61,10 @@ public class view_database extends AppCompatActivity {
 
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot) { //if data snapshot exists open the view details page
                 if (dataSnapshot.exists()) {
                     showData(dataSnapshot);
-                } else {
+                } else { //else close the activity and post the below message
                     finish();
                     Toast.makeText(view_database.this, "Please input your details", Toast.LENGTH_SHORT).show();
                 }
@@ -76,22 +76,16 @@ public class view_database extends AppCompatActivity {
             }
         });
     }
-    private void showData(DataSnapshot dataSnapshot) {
+    private void showData(DataSnapshot dataSnapshot) { //array for displying the details in the listview
         ArrayList<String> array  = new ArrayList<>();
-        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);
-        array.add(" Full Name : " +uInfo.getName());
+        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class); //uses the User Information Java class to obtain the details
+        array.add(" Full Name : " +uInfo.getName()); //gets each value and buts it into the array
         array.add(" Age : " + uInfo.getAge());
         array.add(" Handicap: " + uInfo.getHandicap());
         array.add(" Gender: " + uInfo.getGender());
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-        mListView.setAdapter(adapter);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array); //the array is then set up
+        mListView.setAdapter(adapter); //details are then displayed into the listview
     }
-
-
-    /**
-     * customizable toast
-     * @param message
-     */
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }

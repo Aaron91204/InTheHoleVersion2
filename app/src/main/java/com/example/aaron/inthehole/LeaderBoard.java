@@ -41,12 +41,12 @@ public class LeaderBoard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // sets orientation to portrait
         setContentView(R.layout.activity_leader_board);
-        mListView = (ListView) findViewById(R.id.nlistview);
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = user.getUid();
+        mListView = (ListView) findViewById(R.id.nlistview); //sets up listview
+        mAuth = FirebaseAuth.getInstance(); // Firebase instance
+        FirebaseUser user = mAuth.getCurrentUser(); // gets current user
+        userID = user.getUid(); // gets current user ID
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ") .orderByChild("Net"); // Database Reference
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -69,10 +69,10 @@ public class LeaderBoard extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    showData(dataSnapshot);
+                    showData(dataSnapshot); // checks to see if scores have been inputted into leader board
                 } else {
                     finish();
-                    Toast.makeText(LeaderBoard.this, "No Scores Entered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LeaderBoard.this, "No Scores Entered", Toast.LENGTH_SHORT).show(); // toast to say that no scores have been entered
                 }
             }
             @Override
@@ -81,23 +81,16 @@ public class LeaderBoard extends AppCompatActivity {
         });
 
     }
-    private void showData(DataSnapshot dataSnapshot) { // this array is used to get the Gross Net Name and Handicap of each user and they are then sorted with numiercally from lowest to highest
+    private void showData(DataSnapshot dataSnapshot) { // this array is used to get the Gross Net Name and Handicap of each user and they are then sorted numerically from lowest to highest
         ArrayList<String> array  = new ArrayList<>();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             LeaderBoardScores uInfo = ds.getValue(LeaderBoardScores.class); // Link to the leaderboardscores class
-            array.add("Net: " +uInfo.getNet() );
-            array.add("Name: " +uInfo.getFullName() + "   Gross:  " + uInfo.getGross()+ "   Handicap:  " + uInfo.getPlayerHandicap());
+            array.add("Net: " +uInfo.getNet() ); // Net is the rank of each user
+            array.add("Name: " +uInfo.getFullName() + "   Gross:  " + uInfo.getGross()+ "   Handicap:  " + uInfo.getPlayerHandicap()); //rest of details displayed
         }
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
         mListView.setAdapter(adapter); // the results are then displayed in a ListView
     }
-
-
-
-    /**
-     * customizable toast
-     * @param message
-     */
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }

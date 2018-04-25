@@ -60,12 +60,12 @@ Button btnadd,save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //setting the orientation to portrait
         setContentView(R.layout.activity_scoreboard1);
-        findViewById(profilebtn3).setOnClickListener(this);
-        mAuth = FirebaseAuth.getInstance();
-        firstNum =(EditText)findViewById(R.id.hole1);
-        firstNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
+        findViewById(profilebtn3).setOnClickListener(this); //onclick listener
+        mAuth = FirebaseAuth.getInstance(); //Firebase Instance
+        firstNum =(EditText)findViewById(R.id.hole1); //defining each edittext
+        firstNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});//defining each input validation per hole
         secondNum =(EditText)findViewById(R.id.hole2);
         secondNum.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         secondNum =(EditText)findViewById(R.id.hole2);
@@ -101,20 +101,20 @@ Button btnadd,save;
         hole17.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
         hole18=(EditText)findViewById(R.id.hole18);
         hole18.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12")});
-        handicap=(EditText)findViewById(R.id.edithandicap);
-        handicap.setFilters(new InputFilter[]{new InputFilterMinMax("1", "36")});
-        net =(EditText)findViewById(R.id.netscore);
+        handicap=(EditText)findViewById(R.id.edithandicap); //defining the handicap
+        handicap.setFilters(new InputFilter[]{new InputFilterMinMax("0", "36")}); // handicap range
+        net =(EditText)findViewById(R.id.netscore); //defining the rest of the elements on screen
         result =(TextView) findViewById(R.id.textView3);
         result1 = (EditText)findViewById(R.id.editresult);
         btnadd =(Button)findViewById(R.id.addbtn);
         name=(EditText)findViewById(R.id.editname);
-        name.setKeyListener(null);
+        name.setKeyListener(null); // setting the name and handicap so it could not be changed
         handicap.setKeyListener(null);
         save = (Button) findViewById(R.id.savedetails);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String first= firstNum.getText().toString().trim();
+            public void onClick(View view) { //save button on click listener
+                String first= firstNum.getText().toString().trim();// trimming each edittext
                 String second= secondNum.getText().toString().trim();
                 String third= thirdNum.getText().toString().trim();
                 String fourth= hole4.getText().toString().trim();
@@ -132,8 +132,8 @@ Button btnadd,save;
                 String sixteen= hole16.getText().toString().trim();
                 String seventeen= hole17.getText().toString().trim();
                 String eighteen= hole18.getText().toString().trim();
-                if (first.isEmpty()) {
-                    firstNum.setError("Please enter score");
+                if (first.isEmpty()) { //input validation for each edittext
+                    firstNum.setError("Please enter score");//to ensure that the edittexts cannot be left empty
                     firstNum.requestFocus();
                     return;
                 }
@@ -226,24 +226,24 @@ Button btnadd,save;
                     name.requestFocus();
                     return;
                 }
-                String result = result1.getText().toString();
-                String handicap3 = handicap.getText().toString();
-                String net3 = net.getText().toString();
-                String name13 = name.getText().toString();
-                String user_id = mAuth.getCurrentUser().getUid();
-                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 ").child(user_id);
+                String result = result1.getText().toString(); // obtains the result from the edittext
+                String handicap3 = handicap.getText().toString();//obtains the handicap from the edittext
+                String net3 = net.getText().toString(); //obtains the net score from the edittext
+                String name13 = name.getText().toString();//obtains the name from the edittext
+                String user_id = mAuth.getCurrentUser().getUid();//gets the current user's UID
+                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Net_and_Gross_Scores_Week_25th_April _2018 ").child(user_id); //Database Reference
                 Map newPost = new HashMap();
-                newPost.put("Gross",result);
+                newPost.put("Gross",result);//next four components which are saved to the database
                 newPost.put("PlayerHandicap",handicap3);
                 newPost.put("Net",net3);
                 newPost.put("FullName",name13);
-                current_user_db.setValue(newPost);
-                Toast.makeText(scoreboard1.this, "Score Entered Into Competition", Toast.LENGTH_SHORT).show();
+                current_user_db.setValue(newPost); //the information is then posted
+                Toast.makeText(scoreboard1.this, "Score Entered Into Competition", Toast.LENGTH_SHORT).show(); //Positive message if scores are stored
             }
         });
-        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        String userid=user.getUid();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();//gets current user
+        String userid=user.getUid();//gets the current users id
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users"); //Database Reference for Users
 
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
@@ -259,24 +259,24 @@ Button btnadd,save;
 
 
     }
-    private void showData(DataSnapshot dataSnapshot) {
-        ArrayList<String> array  = new ArrayList<>();
-        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);
-        name.setText(uInfo.getName());
-        handicap.setText(uInfo.getHandicap());
+    private void showData(DataSnapshot dataSnapshot) { //obtaining information from the database and posting them into edittexts
+        ArrayList<String> array  = new ArrayList<>();//array to determine the current information
+        UserInformation uInfo = dataSnapshot.getValue(UserInformation.class);//goes to User Information to obtain the correct data
+        name.setText(uInfo.getName()); //sets the name edittext
+        handicap.setText(uInfo.getHandicap());//sets the handicap edittext
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case profilebtn3:
+            case profilebtn3: //return to profile button
                 finish();
                 startActivity(new Intent(scoreboard1.this, ProfileActivity.class));
                 break;
         }
 
     }
-    public static class InputFilterMinMax implements InputFilter {
+    public static class InputFilterMinMax implements InputFilter { // range check code
 
         private int min, max;
 
@@ -306,7 +306,7 @@ Button btnadd,save;
     }
     public void onAdd(View view)
     {
-        String first= firstNum.getText().toString().trim();
+        String first= firstNum.getText().toString().trim(); //trimming each edittext for validation
         String second= secondNum.getText().toString().trim();
         String third= thirdNum.getText().toString().trim();
         String fourth= hole4.getText().toString().trim();
@@ -324,7 +324,7 @@ Button btnadd,save;
         String sixteen= hole16.getText().toString().trim();
         String seventeen= hole17.getText().toString().trim();
         String eighteen= hole18.getText().toString().trim();
-        if (first.isEmpty()) {
+        if (first.isEmpty()) { // input validation so it cannot be left blank
             firstNum.setError("Please enter score");
             firstNum.requestFocus();
             return;
@@ -413,8 +413,8 @@ Button btnadd,save;
             return;
         }
 
-        int num1, num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18;
-        num1 = Integer.parseInt(firstNum.getText().toString());
+        int num1, num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18; //maths behind calculating Net and Gross
+        num1 = Integer.parseInt(firstNum.getText().toString()); //change all input into integer values
         num2 = Integer.parseInt(secondNum.getText().toString());
         num3 = Integer.parseInt(thirdNum.getText().toString());
         num4 = Integer.parseInt(hole4.getText().toString());
@@ -432,11 +432,11 @@ Button btnadd,save;
         num16 = Integer.parseInt(hole16.getText().toString());
         num17 = Integer.parseInt(hole17.getText().toString());
         num18 = Integer.parseInt(hole18.getText().toString());
-        int sum =num1+num2+num3+num4+num5+num6+num7+num8+num9+num10+num11+num12+num13+num14+num15+num16+num17+num18;
-        result1.setText(Integer.toString(sum));
-        String result= result1.getText().toString().trim();
-        String handicap1= handicap.getText().toString().trim();
-        if (result.isEmpty()) {
+        int sum =num1+num2+num3+num4+num5+num6+num7+num8+num9+num10+num11+num12+num13+num14+num15+num16+num17+num18; //add them all up
+        result1.setText(Integer.toString(sum)); //set sum to be in the result edittext
+        String result= result1.getText().toString().trim(); //trimming the result
+        String handicap1= handicap.getText().toString().trim();//trimming the handicap
+        if (result.isEmpty()) { //input validation for each edittext
             result1.setError("Please enter score");
             result1.requestFocus();
             return;
@@ -447,18 +447,18 @@ Button btnadd,save;
             return;
         }
 
-        int sum1,hand1;
-        sum1 = Integer.parseInt(result1.getText().toString());
-        hand1 = Integer.parseInt(handicap.getText().toString());
+        int sum1,hand1;//maths for calculating net
+        sum1 = Integer.parseInt(result1.getText().toString()); //takes your result
+        hand1 = Integer.parseInt(handicap.getText().toString());//takes your handicap
 
-        int score =sum1-hand1;
-        net.setText(Integer.toString(score));
+        int score =sum1-hand1; //subtracts handicap from result
+        net.setText(Integer.toString(score));//posts the result into the net edittext
 
 
     }
     public void calculate(View view)
     {
-        String first1= firstNum.getText().toString().trim();
+        String first1= firstNum.getText().toString().trim(); //trimming each edittext
         String second1= secondNum.getText().toString().trim();
         String third1= thirdNum.getText().toString().trim();
         String fourth1= hole4.getText().toString().trim();
@@ -476,7 +476,7 @@ Button btnadd,save;
         String sixteen1= hole16.getText().toString().trim();
         String seventeen1= hole17.getText().toString().trim();
         String eighteen1= hole18.getText().toString().trim();
-        if (first1.isEmpty()) {
+        if (first1.isEmpty()) { //input validation for each edittext
             firstNum.setError("Please enter score");
             firstNum.requestFocus();
             return;
@@ -564,7 +564,7 @@ Button btnadd,save;
             hole18.requestFocus();
             return;
         }
-        String first= firstNum.getText().toString();
+        String first= firstNum.getText().toString(); //obtains string values for each number entered
         String second= secondNum.getText().toString();
         String third= thirdNum.getText().toString();
         String fourth= hole4.getText().toString();
@@ -582,10 +582,10 @@ Button btnadd,save;
         String sixteen= hole16.getText().toString();
         String seventeen= hole17.getText().toString();
         String eighteen= hole18.getText().toString();
-        String user_id = mAuth.getCurrentUser().getUid();
-        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Hole_Scores_17th_March_2018 ").child(user_id);
+        String user_id = mAuth.getCurrentUser().getUid(); // getting the current users UID
+        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Scores").child("Hole_Scores_17th_March_2018 ").child(user_id); //Database Reference to where the data will be stored
         Map newPost1 = new HashMap();
-        newPost1.put("Hole1",first);
+        newPost1.put("Hole1",first); // each component which will be stored into the database
         newPost1.put("Hole2",second);
         newPost1.put("Hole3",third);
         newPost1.put("Hole4",fourth);
@@ -603,11 +603,11 @@ Button btnadd,save;
         newPost1.put("Hole16",sixteen);
         newPost1.put("Hole17",seventeen);
         newPost1.put("Hole18",eighteen);
-        current_user_db.setValue(newPost1);
-        Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();
+        current_user_db.setValue(newPost1);//posts the information to the address above
+        Toast.makeText(scoreboard1.this, "Score Saved", Toast.LENGTH_SHORT).show();//positive message if the information is correct
     }
-    public void clear(View v){
-        firstNum.setText("");
+    public void clear(View v){ //Reset button
+        firstNum.setText(""); //Clears all edittexts when the button is clicked
         secondNum.setText("");
         thirdNum.setText("");
         hole4.setText("");

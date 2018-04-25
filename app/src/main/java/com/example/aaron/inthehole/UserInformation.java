@@ -7,7 +7,8 @@ package com.example.aaron.inthehole;
         private String gender;
     private String handicap;
 
-        public UserInformation(){ // Details For View Informatioj
+        public UserInformation(){ // Details For View Information
+            //each of the values are then set and get for further use
 
         }
 

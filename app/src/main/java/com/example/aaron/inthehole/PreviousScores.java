@@ -35,11 +35,11 @@ public class PreviousScores extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // orientation for the application to the portrait
         setContentView(com.example.aaron.inthehole.R.layout.activity_previous_scores);
-        mListView = (ListView) findViewById(R.id.mlistview);
-        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-        String userid=user.getUid();
+        mListView = (ListView) findViewById(R.id.mlistview); //listview set up
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser(); //gets current user
+        String userid=user.getUid(); // gets current user's UID
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Hole_Scores_17th_March_2018 "); //Database Reference
 
 
@@ -104,12 +104,6 @@ public class PreviousScores extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
         mListView.setAdapter(adapter); // shown in a listview
     }
-
-
-    /**
-     * customizable toast
-     * @param message
-     */
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }

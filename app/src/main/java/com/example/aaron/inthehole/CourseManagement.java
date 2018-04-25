@@ -13,10 +13,10 @@ import android.widget.ImageView;
 public class CourseManagement extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // sets the orientation to be portrait
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_management);
-        findViewById(R.id.profilebutton).setOnClickListener(this);
+        findViewById(R.id.profilebutton).setOnClickListener(this); // sets the on click listener, allowing each to be clickable
         findViewById(R.id.hole1btn).setOnClickListener(this);
         findViewById(R.id.hole2btn).setOnClickListener(this);
         findViewById(R.id.hole3btn).setOnClickListener(this);
@@ -27,7 +27,6 @@ public class CourseManagement extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.hole8btn).setOnClickListener(this);
         findViewById(R.id.hole9btn).setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -35,20 +34,20 @@ public class CourseManagement extends AppCompatActivity implements View.OnClickL
                 finish();
                 startActivity(new Intent(CourseManagement.this, ProfileActivity.class));
                 break;
-            case R.id.hole1btn: // each of these next cases create an alert dialog to show the images of each hole. This shows the holes and fairways
+            case R.id.hole1btn: // each of these next cases create an alert dialog to show the images of each hole. This shows the holes, fairways and greens
                 ImageView image =new ImageView(this);
                 image.setImageResource(R.drawable.hole1); // the image used
-                AlertDialog.Builder builder =
+                AlertDialog.Builder builder = // alert dialog displaying the image
                         new AlertDialog.Builder(this).
                                 setMessage("Hole 1"). // Positive Messages
                                 setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
+                                        dialog.dismiss(); // closes the dialog
                                     }
                                 }).
                                 setView(image);
-                builder.create().show();
+                builder.create().show(); //builds the alert dialog
                 break;
             case R.id.hole2btn:
                 ImageView image1 =new ImageView(this);

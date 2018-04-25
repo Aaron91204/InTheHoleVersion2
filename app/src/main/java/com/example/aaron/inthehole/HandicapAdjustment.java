@@ -33,20 +33,20 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //setting the orientation to portrait
         setContentView(R.layout.activity_handicap_adjustment);
-        findViewById(R.id.calculatehandicap).setOnClickListener(this);
+        findViewById(R.id.calculatehandicap).setOnClickListener(this); //onclick listeners
         findViewById(R.id.handicap2profile).setOnClickListener(this);
-        photo1 = (GifImageView)findViewById(R.id.gifImageView);
+        photo1 = (GifImageView)findViewById(R.id.gifImageView); // gif images which are used
         photo2 = (GifImageView)findViewById(R.id.gifImageView2);
         photo3 = (GifImageView)findViewById(R.id.gifImageView3);
         photo4 = (GifImageView)findViewById(R.id.gifImageView4);
         photo5 = (GifImageView)findViewById(R.id.gifImageView5);
         adjust = (EditText) findViewById(R.id.adjust);
-        retrievehandicap = (EditText)findViewById(R.id.retreivehandicap);
+        retrievehandicap = (EditText)findViewById(R.id.retreivehandicap); //finding specific parts of the application
         retrievenet = (EditText) findViewById(R.id.retrievenet);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser(); // get current details
-        String userid=user.getUid(); // gets currend ID
+        String userid=user.getUid(); // gets current ID
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Scores").child("Net_and_Gross_Scores_Week_17th_March _2018 "); //Database Reference
         ref.child(userid).addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,7 +55,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     showData(dataSnapshot);
                 } else {
                    finish();
-                    Toast.makeText(HandicapAdjustment.this, "You need to submit a score", Toast.LENGTH_SHORT).show(); // toast message if there is an error
+                    Toast.makeText(HandicapAdjustment.this, "You need to submit a score into the competition", Toast.LENGTH_SHORT).show(); // toast message if there is an error
                 }
             }
             @Override
@@ -65,7 +65,7 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
     }
     private void showData(DataSnapshot dataSnapshot) { // array to find the details of the member
         ArrayList<String> array  = new ArrayList<>();
-        LeaderBoardScores uInfo = dataSnapshot.getValue(LeaderBoardScores.class);
+        LeaderBoardScores uInfo = dataSnapshot.getValue(LeaderBoardScores.class); // uses the Leaderboard Scores to get and set the information
         array.add(" Net Score : " +uInfo.getNet());
         array.add(" Handicap : " + uInfo.getPlayerHandicap());
         array.add(" Full Name: " + uInfo.getFullName());
@@ -84,9 +84,9 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                 startActivity(new Intent(HandicapAdjustment.this, ProfileActivity.class));
                 break;
             case R.id.calculatehandicap: // calculate handicap
-                 Handicap =(EditText)findViewById(R.id.retreivehandicap);
+                 Handicap =(EditText)findViewById(R.id.retreivehandicap); //retrieves the two edittexts
                  Net =(EditText)findViewById(R.id.retrievenet);
-                String name2= Handicap.getText().toString().trim();
+                String name2= Handicap.getText().toString().trim(); //validation to ensure that the two edit texts are not empty
                 String net2= Net.getText().toString().trim();
                 if (name2.isEmpty()) { // entry validation
                     Handicap.setError("Please enter your Handicap");
@@ -99,27 +99,27 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     return;
                 }
                 double num1, num2; // hanicap calculation
-                num1 = Double.parseDouble(Handicap.getText().toString());
+                num1 = Double.parseDouble(Handicap.getText().toString());//set the values of input to be double
                 num2 = Double.parseDouble(Net.getText().toString());
-                if(num2 >76 && num1>=36)
+                if(num2 >76 && num1>=36) //net above 76 and handicap = 36
                 {
                     double sum;
                     sum = num1;
                     adjust.setText(Double.toString(sum));
                 }
-                else if(num2 >76 && num1<=36)
+                else if(num2 >76 && num1<=36) //net above 76 and handicap is then less 36
                 {
                 double sum;
                 sum = num1 +0.1;
                 adjust.setText(Double.toString(sum));
-                    photo1.setVisibility(View.GONE);
-                    photo2.setVisibility(View.GONE);
-                    photo3.setVisibility(View.GONE);
-                    photo4.setVisibility(View.GONE);
-                    photo5.setVisibility(View.VISIBLE);
+                    photo1.setVisibility(View.GONE); // postive gifs hidden
+                    photo2.setVisibility(View.GONE); // postive gifs hidden
+                    photo3.setVisibility(View.GONE); // postive gifs hidden
+                    photo4.setVisibility(View.GONE); // postive gifs hidden
+                    photo5.setVisibility(View.VISIBLE); // negative gifs shown
                     Toast.makeText(this, "Bad Score = Increase In Handicap", Toast.LENGTH_SHORT).show();
                 }
-                else if(num2<72 && num1>=18 && num1<=36 )
+                else if(num2<72 && num1>=18 && num1<=36 ) //net below 72 and handicap between 36 and 18
                 {
                 double sum;
                 double Net;
@@ -128,15 +128,15 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                 Par = Net*0.4;
                 sum = num1 -Par;
                 adjust.setText(Double.toString(sum));
-                    photo1.setVisibility(View.VISIBLE);
-                    photo2.setVisibility(View.VISIBLE);
-                    photo3.setVisibility(View.VISIBLE);
-                    photo4.setVisibility(View.VISIBLE);
-                    photo5.setVisibility(View.GONE);
+                    photo1.setVisibility(View.VISIBLE); // postive gifs shown
+                    photo2.setVisibility(View.VISIBLE); // postive gifs shown
+                    photo3.setVisibility(View.VISIBLE); // postive gifs shown
+                    photo4.setVisibility(View.VISIBLE); // postive gifs shown
+                    photo5.setVisibility(View.GONE); // negative gifs shown
                     Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
 
                 }
-                else if(num2<72 && num1>=5 && num1<=18 )
+                else if(num2<72 && num1>=5 && num1<=18 ) //net below 72 and handicap between 18 and 5
                 {
                     double sum;
                     double Net;
@@ -146,13 +146,13 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     sum = num1 -Par;
                     adjust.setText(Double.toString(sum));
                     Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
-                    photo1.setVisibility(View.VISIBLE);
-                    photo2.setVisibility(View.VISIBLE);
-                    photo3.setVisibility(View.VISIBLE);
-                    photo4.setVisibility(View.VISIBLE);
-                    photo5.setVisibility(View.GONE);
+                    photo1.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo2.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo3.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo4.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo5.setVisibility(View.GONE); // negative gifs shown
                 }
-                else if(num2<72 && num1>=0 && num1<=5 )
+                else if(num2<72 && num1>=0 && num1<=5 ) //net below 72 and handicap between 0 and 5
                 {
                     double sum;
                     double Net;
@@ -162,29 +162,29 @@ public class HandicapAdjustment extends AppCompatActivity implements View.OnClic
                     sum = num1 -Par;
                     adjust.setText(Double.toString(sum));
                     Toast.makeText(this, "Congrats On Your New Handicap", Toast.LENGTH_SHORT).show();
-                    photo1.setVisibility(View.VISIBLE);
-                    photo2.setVisibility(View.VISIBLE);
-                    photo3.setVisibility(View.VISIBLE);
-                    photo4.setVisibility(View.VISIBLE);
-                    photo5.setVisibility(View.GONE);
+                    photo1.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo2.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo3.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo4.setVisibility(View.VISIBLE);// postive gifs shown
+                    photo5.setVisibility(View.GONE); // negative gifs shown
                 }
-                else if(num2>72 && num2<=76 )
+                else if(num2>72 && num2<=76 ) //net above 72 but less than 76
                 {
                     double sum;
-                    sum = num1 +0;
+                    sum = num1 +0; //no change to handicap
                     adjust.setText(Double.toString(sum));
                     Toast.makeText(this, "No Change", Toast.LENGTH_SHORT).show();
-                    photo1.setVisibility(View.GONE);
-                    photo2.setVisibility(View.GONE);
-                    photo3.setVisibility(View.GONE);
-                    photo4.setVisibility(View.GONE);
-                    photo5.setVisibility(View.GONE);
+                    photo1.setVisibility(View.GONE);// postive gifs hidden
+                    photo2.setVisibility(View.GONE);// postive gifs hidden
+                    photo3.setVisibility(View.GONE);// postive gifs hidden
+                    photo4.setVisibility(View.GONE);// postive gifs hidden
+                    photo5.setVisibility(View.GONE);// negative gifs hidden
                 }
                 break;
         }
 
     }
-    public class InputFilterMinMax implements InputFilter { // input validation
+    public class InputFilterMinMax implements InputFilter { // input validation which is set up
 
         private int min, max;
 
